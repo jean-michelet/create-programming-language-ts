@@ -145,7 +145,7 @@ SyntaxError: Invalid or unexpected token
 ```
     
 ### Analyse syntaxique
-La phase d'analyse syntaxique permet d'examiner la structure du programme afin de s'assurer qu'il suit les règles grammaticales du langage. Le programme chargé de procéder à l’analyse syntaxique est généralement appelé **parser**.
+La phase d'analyse syntaxique permet d'examiner la structure du programme afin de s'assurer qu'il respecte les règles grammaticales du langage. Le programme chargé de procéder à l’analyse syntaxique est généralement appelé **parser**.
 
 Par exemple, le code `if (;` est validé par le scanner, mais rejeté par le parser.
 
