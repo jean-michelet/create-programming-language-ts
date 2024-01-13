@@ -7,7 +7,7 @@
 - [Pourquoi utiliser TypeScript ?](#pourquoi-utiliser-typescript-)
 - [Langages de programmation compilés vs interprétés](#langages-de-programmation-compilés-vs-interprétés)
 - [Interpréteur d'AST](#interpréteur-dast)
-- [Machines Virtuelles et Byte Codes](#machines-virtuelles-et-byte-codes)
+- [Machines Virtuelles et bytecode](#machines-virtuelles-et-bytecode)
 - [Étapes de compilation](#étapes-de-compilation)
 
 
@@ -78,7 +78,7 @@ Voici une représentation possible sous forme d'AST :
 
 Un interpréteur d'AST est un programme qui va parcourir l'AST et exécuter chaque instruction qu'il contient. Un de ses avantages majeurs est que le code source ne nécessite aucune compilation, ce qui lui confère une excellente portabilité. De plus, un AST peut contenir beaucoup d'informations, permettant une analyse et une manipulation très fine du code source. Mais sa structure s'accompagne également d'inconvénients, analyser et exécuter chaque nœud de l'AST en temps réel n'est pas performant en termes de rapidité d'exécution et de consommation de mémoire.
 
-### Machines Virtuelles et Byte Codes
+### Machines Virtuelles et bytecode
 Une machine virtuelle (VM) est un logiciel créant une couche d'abstraction entre un programme et le matériel informatique sur lequel il s'exécute.
 
 Dans le contexte des langages de programmation, une machine virtuelle est utilisée pour générer et exécuter un ensemble d'instructions intermédiaires appelées **bytecode**, ce qui permet une exécution plus efficace et moins coûteuse en mémoire qu'un AST. La compilation du code source en bytecode peut être prise en charge par la machine virtuelle ou un composant intermédiaire.
