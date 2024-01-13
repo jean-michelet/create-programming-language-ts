@@ -273,7 +273,7 @@ Exemples de structures intermédiaires :
 ### Optimisation de code intermédiaire
 L'optimisation du code intermédiaire a pour but d'améliorer les performances du programme.
 
-Exemple de simplification de sous-expressions constantes (Constant folding) avec le IRBuilder de LLVM :
+Exemple de simplification de sous-expressions constantes (Constant folding) avec le IRBuilder de [LLVM](https://llvm.org/) :
 ```js
 // Code source
 function test(x) {
