@@ -40,7 +40,7 @@ Tout simplement, car *je* lui trouve des avantages pédagogiques :
 - Système de typage relativement avancé (génériques, unions, intersections…)
 - Haut niveau, simple d’utilisation
 - Appartient syntaxiquement à la famille des langages C (syntaxe populaire)
-- Propose un paradigme orienté objet : classes, interfaces, visibilité… (la POO est très populaire et peut-être pratique pour générer un AST)
+- Propose un paradigme orienté objet class-based : classes, interfaces, visibilité… (paradigme populaire : C++, Java, C#, PHP, Ruby, Python...)
 
 Mais, rassurez-vous, connaître TypeScript n'est absolument pas nécessaire pour suivre ce cours. Je vous conseille même d'utiliser votre langage de prédilection si cela vous permet d'être plus à l'aise.
 
