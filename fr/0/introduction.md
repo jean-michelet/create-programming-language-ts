@@ -81,7 +81,7 @@ Un interpréteur d'AST est un programme qui va parcourir l'AST et exécuter chaq
 ### Machines Virtuelles et Byte Codes
 Une machine virtuelle (VM) est un logiciel créant une couche d'abstraction entre un programme et le matériel informatique sur lequel il s'exécute.
 
-Dans le contexte des langages de programmation, une machine virtuelle est utilisée pour exécuter un ensemble d'instructions intermédiaires appelées **bytecode**. Généralement, une machine virtuelle compile le code source d'un programme en bytecode, ce qui permet une exécution plus efficace et moins coûteuse en mémoire qu'un AST.
+Dans le contexte des langages de programmation, une machine virtuelle est utilisée pour générer et exécuter un ensemble d'instructions intermédiaires appelées **bytecode**, ce qui permet une exécution plus efficace et moins coûteuse en mémoire qu'un AST. La compilation du code source en bytecode peut être prise en charge par la machine virtuelle ou un composant intermédiaire.
 
 Prenons l'exemple de l'expression :
 ```javascript
