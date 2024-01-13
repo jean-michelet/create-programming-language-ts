@@ -149,7 +149,7 @@ La phase d'analyse syntaxique permet d'examiner la structure du programme afin d
 
 Par exemple, le code `if (;` est validé par le scanner, mais rejeté par le parser.
 
-Le plus souvent, l'analyseur syntaxique produit un AST. En plus des avantages cités [précédemment](#interpréteur-dast), générer un AST permet également de résoudre certaines ambiguïtés. Par exemple, cette suite de tokens `{1, +, 2, /, 3}` est valide, mais faut-il commencer par résoudre l'addition ou la division ? L'AST est généré de sorte à ce que les opérations soient organisées en respectant la priorité des opérations.
+Le plus souvent, l'analyseur syntaxique produit un AST. En plus des avantages cités [précédemment](#interpréteur-dast), générer un AST permet également de résoudre certaines ambiguïtés. Par exemple, cette suite de tokens `{1, +, 2, /, 3}` est valide, mais faut-il commencer par résoudre l'addition ou la division ? L'AST est généré de sorte à respecter [la précédence des opérateurs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence).
 
 #### Exemple de génération d'AST
 
