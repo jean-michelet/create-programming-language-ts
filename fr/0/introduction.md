@@ -3,8 +3,8 @@
 
 ## Sommaire
 
-- [Pourquoi apprendre à créer un langage de programmation ?](#pourquoi-apprendre-à-créer-un-langage-de-programmation)
-- [Pourquoi utiliser TypeScript ?](#pourquoi-utiliser-typescript)
+- [Pourquoi apprendre à créer un langage de programmation ?](#pourquoi-apprendre-à-créer-un-langage-de-programmation-)
+- [Pourquoi utiliser TypeScript ?](#pourquoi-utiliser-typescript-)
 - [Langages de programmation compilés vs interprétés](#langages-de-programmation-compilés-vs-interprétés)
 - [Interpréteur d'AST](#interpréteur-dast)
 - [Machines Virtuelles et Byte Codes](#machines-virtuelles-et-byte-codes)
