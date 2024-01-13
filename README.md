@@ -12,7 +12,8 @@ C'est une question légitime, pourquoi investir du temps dans une tâche de cett
 En fonction de vos intérêts propres, je suis sûr que vous pouvez concevoir bien d'autres raisons de créer votre propre langage. Pour moi, je dirais tout simplement que c'est un projet passionnant et fun !
 
 
-- [Introduction générale ](https://github.com/jean-michelet/create-programming-language-ts/blob/main/fr/0/introduction.md)
+- [Introduction générale](https://github.com/jean-michelet/create-programming-language-ts/blob/main/fr/0/introduction.md)
+- Introduction à la théorie des langages
 - Développer un scanner
 - Développer un parser
 - Développer un analyseur sémantique
