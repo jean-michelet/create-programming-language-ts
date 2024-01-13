@@ -112,7 +112,7 @@ Par ailleurs, les machines virtuelles permettent généralement des techniques d
 ### Stratégies hybrides
 Certains moteurs JavaScript adoptent une approche hybride pour exécuter du JavaScript.
 
-C'est le cas de V8, qui met en œuvre un interpréteur [Ignition](https://v8.dev/blog/ignition-interpreter) et un compilateur JIT [TurboFan](https://v8.dev/blog/turbofan-jit). Ignition compile le JavaScript en bytecode, l'exécute directement ou fait appel à TurboFan pour une optimisation en code machine optimisé.
+C'est le cas de V8, qui met en œuvre un interpréteur [Ignition](https://v8.dev/blog/ignition-interpreter) et un compilateur JIT [TurboFan](https://v8.dev/blog/turbofan-jit). Ignition compile le JavaScript en bytecode, l'exécute directement ou fait appel à TurboFan pour une compilation en code machine optimisé.
 
 Pour en savoir plus :
 - [BlinkOn 6 Day 1 Talk 2: Ignition - an interpreter for V8](https://www.youtube.com/watch?v=r5OWCtuKiAk) (commence à dater un peu)
