@@ -11,6 +11,10 @@ C'est une question légitime, pourquoi investir du temps dans une tâche de cett
 
 En fonction de vos intérêts propres, je suis sûr que vous pouvez concevoir bien d'autres raisons de créer votre propre langage. Pour moi, je dirais tout simplement que c'est un projet passionnant et fun !
 
+## Prérequis 
+Ce cours s'adresse aux développeurs expérimentés et étudiants très motivés. Il nécessite une bonne maîtrise des fondamentaux de la programmation orientée objet.
+Visibilité, héritage, interface, classes et méthodes abstraites doivent être des concepts parfaitement clairs pour vous.
+
 
 - [Introduction générale](https://github.com/jean-michelet/create-programming-language-ts/blob/main/fr/0/introduction.md)
 - Introduction à la théorie des langages
