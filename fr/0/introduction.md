@@ -26,7 +26,7 @@ En fonction de vos intérêts propres, je suis sûr que vous pouvez concevoir bi
 
 ## Pourquoi utiliser TypeScript ?
 TypeScript, c'est JavaScript avec des types. Bon, c'est un peu plus que ça, mais ce cours n'est pas un cours sur TypeScript...
-Pour résumé, TypeScript est un langage compilé. Son compilateur procède à une analyse sémantique et compile le tout en JavaScript valide pour les navigateurs et autres environnements d'exécution de JavaScript. Utiliser TypeScript contribue à améliorer la maintenabilité, la lisibilité, et la prédictibilité des projets écrits en JavaScript.
+En résumé, TypeScript est un langage compilé. Son compilateur procède à une analyse sémantique et compile le tout en JavaScript valide pour les navigateurs et autres environnements d'exécution de JavaScript. Utiliser TypeScript contribue à améliorer la maintenabilité, la lisibilité, et la prédictibilité des projets écrits en JavaScript.
 
 Exemple d'analyse sémantique et compilation d'un code TypeScript en JavaScript :
 
