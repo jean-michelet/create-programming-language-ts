@@ -13,7 +13,7 @@ Comme nous l'avons vu dans le chapitre d'introduction, l'analyse lexicale est l'
 ### Les tokens
 Chaque token est défini par un type et un lexème, qui est la représentation textuelle du token dans le code source :
 
-| Type                                          | Lexème(s)                                  |
+| Type                                          | Lexèmes                                    |
 |-----------------------------------------------|--------------------------------------------|
 | Littéral                                      | `2`, `true`, `"hello"`                     |
 | Mot-clé                                       | `if`, `while`, `class`                     |
