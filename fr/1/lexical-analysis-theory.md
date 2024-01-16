@@ -8,7 +8,7 @@
 
 
 ## Introduction à l'analyse lexicale
-Comme nous l'avons vue dans le chapitre d'introduction, l'analyse lexicale est l'analyse et le découpage d'un programme en une suite de tokens. Le programme en charge de l'analyse lexicale est généralement appelé **scanner**, **lexer** ou **tokenizer**. 
+Comme nous l'avons vu dans le chapitre d'introduction, l'analyse lexicale est l'analyse et le découpage d'un programme en une suite de tokens. Le programme en charge de l'analyse lexicale est généralement appelé **scanner**, **lexer** ou **tokenizer**. 
 
 ### Les tokens
 Chaque token est défini par un type et un lexème, qui est la représentation textuelle du token dans le code source :
