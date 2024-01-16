@@ -1,3 +1,5 @@
+<a href="https://github.com/jean-michelet/create-programming-language-ts/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a> <a href="https://github.com/jean-michelet/create-programming-language-ts"><img src="https://img.shields.io/github/stars/jean-michelet/create-programming-language-ts?style=social" alt="stars - create-programming-language-ts"></a>
+
 ## Pourquoi apprendre à créer un langage de programmation ?
 C'est une question légitime, pourquoi investir du temps dans une tâche de cette complexité ? 
 
@@ -22,3 +24,7 @@ Visibilité, héritage, interface, classes et méthodes abstraites doivent être
 - Développer un parser
 - Développer un analyseur sémantique
 - Développer une machine virtuelle
+
+---
+
+#### Si vous trouvez ce projet utile, mettez-lui une étoile pour montrer votre soutien !
