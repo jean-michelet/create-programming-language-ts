@@ -230,7 +230,7 @@ L₁ = { ab }
 
 Lorsque le DFA analyse le mot `ab`, il commence par **S₀**, transitionne vers **S₁** via `a`, puis transitionne vers **S₂**, état final, via `b`. Si le DFA atteint **S₂** après avoir traité toute la chaîne, cela signifie qu'il a reconnu le motif.
 
-Le DFA ne peut avoir qu'une seule transition pour une entrée donnée depuis un état précis, d'où son aspect "déterministe". Si le DFA avait plusieurs transitions possibles pour une entrée depuis un état, il serait considéré comme un NFA (Automate Fini Non Déterministe).
+Le DFA ne peut avoir qu'une seule transition pour un symbole donnée depuis un état précis, d'où son aspect "déterministe". Si le DFA avait plusieurs transitions possibles pour un symbole depuis un état, il serait considéré comme un NFA (Automate Fini Non Déterministe).
 
 ### Automates Finis Non Déterministes
 Un **automate fini non déterministe**, ou **NFA** (pour **Non-deterministic Finite Automaton**), contrairement aux DFA, peut avoir plusieurs transitions possibles pour un même symbole à partir d'un état donné. Cette caractéristique lui offre une flexibilité accrue, mais, souvent, augmente aussi sa complexité d'implémentation.
