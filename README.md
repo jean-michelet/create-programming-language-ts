@@ -19,8 +19,7 @@ Visibilité, héritage, interface, classes et méthodes abstraites doivent être
 
 ## Modules
 - [Introduction générale](https://github.com/jean-michelet/create-programming-language-ts/blob/main/fr/0/introduction.md)
-- Introduction à la théorie des langages
-- Développer un scanner
+- [Développer un scanner](https://github.com/jean-michelet/create-programming-language-ts/blob/main/fr/1/lexical-analysis-theory.md) (partie 1/2 uniquement)
 - Développer un parser
 - Développer un analyseur sémantique
 - Développer une machine virtuelle
