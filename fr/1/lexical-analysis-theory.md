@@ -223,7 +223,7 @@ L₁ = { ab }
 
 * Il y a 3 états : **S₀**, **S₁**, **S₂**
 * L'état initial est **S₀**
-* L'état final est **S₂**
+* L'état final est **S₂** (reconnaissable par sa bordure intérieure)
 * Les transitions sont
 - De **S₀** à **S₁** via `a`
 - De **S₁** à **S₂** via `b`
