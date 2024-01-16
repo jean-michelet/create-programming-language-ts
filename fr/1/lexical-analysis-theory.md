@@ -219,7 +219,7 @@ L₁ = { ab }
 
 | ![Automate /^ab$/](./1-automate-ab.png) |
 |:--:| 
-| Automate L1 |
+| DFA_L1 |
 
 * Il y a 3 états : **S₀**, **S₁**, **S₂**
 * L'état initial est **S₀**
