@@ -126,7 +126,7 @@ Un **langage** est un ensemble de mots formés à partir d'un **alphabet**. Ces 
 L1 = { aa, bb }
 ```
 
-Ici, **L1** contient uniquement les mots `aa` ou `bb`.
+Ici, **L1** contient uniquement les mots `aa` et `bb`.
 
 #### Exemple de langage infini
 Considérons le langage **L2** défini sur l'alphabet **Σ** dont les mots sont l'ensemble des combinaisons qu'il est possible de créer, encadré par le symbole `%`.
