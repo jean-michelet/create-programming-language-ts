@@ -281,10 +281,13 @@ En plus de l'entrée `b`, **L2** accepte toutes les mots de **L1**.
 ### Conversion de NFA en DFA
 Du fait de leur nature non-déterministe, les NFA sont généralement plus complexes à implémenter que les DFA. Pour repérer un motif dans une séquence, un NFA va parcourir toutes les trajectoires possibles pour établir si la séquence est conforme au langage défini, ce qui peut entraîner des soucis de performance. 
 
-#### Aller plus loin
-Nous sommes très loin d'avoir abordé toutes les notions de la théorie des langages, nous en reparlerons un peu lorsque nous nous intéresserons à l'analyse syntaxique. Je pars du principe que beaucoup de lecteurs n'ont pas les bases mathématiques nécessaires ni d'intérêt pour le sujet, mais voici quelques ressources pour les personnes intéressées.
+## Conclusion
+Il faut donc bien comprendre qu'un langage régulier est un langage formel pouvant être reconnu par un automate fini, et pouvant être décrit par une expression régulière.
 
-Références :
+Nous sommes très loin d'avoir abordé toutes les notions de la théorie des langages, nous en reparlerons un peu lorsque nous nous intéresserons à l'analyse syntaxique. Je pars du principe que beaucoup de lecteurs n'ont pas les bases mathématiques nécessaires ni d'intérêt pour le sujet, mais vous pouvez consulter les ressources présentes dans la section **Aller plus loin**.
+
+
+## Aller plus loin
 - Porter, Harry. (2015). Youtube. [Lecture 1/65: Background: What You Probably Know.](https://www.youtube.com/watch?v=TOsMcgIK95k) (Remise à niveau mathématique)
 - Demaille, Akim. (21 novembre 2016). Youtube. [Théorie des Langages.](https://www.youtube.com/watch?v=WbUpN4fHs_k)
 - Solnon, Christine. PDF. [Théorie des Langages.](https://perso.liris.cnrs.fr/christine.solnon/langages.pdf)
