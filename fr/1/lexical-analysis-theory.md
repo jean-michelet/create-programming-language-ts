@@ -175,7 +175,7 @@ Signifie donc que :
 2) `w` est composé uniquement de symboles appartenant à l'ensemble `{ a, b }`.
 
 ### Langages réguliers
-**L2** est un langage formel dit régulier (ou rationnel). Un langage régulier est un langage qui est accepté par un **automate fini** (ça vient, ça vient 😉).
+**L2** est un langage formel dit régulier (ou rationnel). Un langage régulier est un langage qui est accepté par un **automate fini** (encore une fois, nous allons y venir).
 
 [Stephen Cole Kleene](https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re) a inventé les expressions régulières pour représenter ce type de langage, voici **L2** sous forme d'expression régulière :
 ```
