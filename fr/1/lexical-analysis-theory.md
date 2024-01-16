@@ -149,7 +149,7 @@ Puisque **L2** est infini, il est plus clair de le représenter sous forme de no
 L2 = { %w% | w ∈ Σ' }
 ```
 
-Pas de panique, je vais tout vous expliquer :wink:.
+Pas de panique, je vais tout vous expliquer :wink:
 
 Le symbole `\` est utilisé pour représenter la soustraction d'ensembles.
 
