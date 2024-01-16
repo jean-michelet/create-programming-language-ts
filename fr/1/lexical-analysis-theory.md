@@ -22,7 +22,7 @@ Chaque token est défini par un type et un lexème, qui est la représentation t
 
 Ces lexèmes peuvent être décrits par des expressions régulières :
 
-| Mot-clé   | Expression régulière  |
+| Lexème    | Expression régulière  |
 |-----------|-----------------------|
 | if        | `\bif\b`               |
 | while     | `\bwhile\b`            |
