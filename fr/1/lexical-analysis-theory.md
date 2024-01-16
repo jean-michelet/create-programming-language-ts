@@ -129,7 +129,7 @@ L1 = { aa, bb }
 Ici, **L1** contient uniquement les mots `aa` ou `bb`.
 
 #### Exemple de langage infini
-Considérons le langage **L2** défini par l'alphabet **Σ** avec des mots encadrés par le symbole `%`.
+Considérons le langage **L2** défini sur l'alphabet **Σ** dont les mots sont l'ensemble des combinaisons qu'il est possible de créer, encadré par le symbole `%`.
 
 Si :
 ```
@@ -191,7 +191,7 @@ Maintenant, souvenez-vous de l'expression régulière permettant de scanner un t
 "[^"]*"
 ```
 
-On y observe la présence du symbole `*`, il s'agit de [l'étoile de Kleene](https://fr.wikipedia.org/wiki/%C3%89toile_de_Kleene), en référence au mathématicien dont on vient de parler. Elle indique ici qu'un caractère dans `[^"]` (tout caractère à l'exception de `"`) peut apparaître zéro ou plusieurs fois. Donc `""`, `"Hello, world!"` sont les chaînes acceptées par `"[^"]*"`.
+On y observe la présence du symbole `*`, il s'agit de [l'étoile de Kleene](https://fr.wikipedia.org/wiki/%C3%89toile_de_Kleene), en référence au mathématicien dont on vient de parler. Elle indique ici qu'un caractère dans `[^"]` (tout caractère à l'exception de `"`) peut apparaître zéro ou plusieurs fois. Donc `""`, `"Hello, world!"` sont des chaînes acceptées par `"[^"]*"`.
 
 Autre exemple, pour l'expression régulière `a*`, nous pouvons valider `ε`, `a`, `aa`, `aaa`, etc.
 
@@ -205,12 +205,12 @@ Un **automate fini**, également connu sous le nom de machine à états fini, es
 
 ### Structure d'un automate fini
 * **États** : Ils représentent les positions ou situations possibles de l'automate.
-* **Transitions** : Les mouvements que l'automate peut effectuer d'un état à un autre en fonction du symbole lu.
+* **Transitions** : Les mouvements que l'automate peut effectuer d'un état à un autre à partir d'un symbole.
 * **État de départ** : L'état initial où l'automate débute son parcours.
 * **États d'acceptation** : Atteindre ces états signifie que l'automate a reconnu le motif recherché.
 
 ### Automates Finis Déterministes
-Un **automate fini déterministe** ou **DFA** (Deterministic Finite Automaton) en anglais, reconnaît des motifs simples et déterministes. Il a un nombre fini d'états, et pour chaque état, une entrée spécifique conduit à un état déterminé.
+Un **automate fini déterministe** ou **DFA** (Deterministic Finite Automaton) en anglais, reconnaît des motifs simples et déterministes. Il a un nombre fini d'états, et pour chaque état, une symbole spécifique conduit à un état déterminé.
 
 Prenons l'exemple d'un **DFA** pour le langage :
 ```
@@ -225,19 +225,19 @@ L₁ = { ab }
 * L'état initial est **S₀**
 * L'état final est **S₂**
 * Les transitions sont
-- De **S₀** à **S₁** avec l'entrée `a`
-- De **S₁** à **S₂** avec l'entrée `b`
+- De **S₀** à **S₁** via `a`
+- De **S₁** à **S₂** via `b`
 
-Lorsque le DFA analyse le mot `ab`, il commence par **S₀**, passe à **S₁** après avoir lu `a`, puis atteint **S₂** après avoir lu `b`. Si le DFA atteint **S₂** après avoir traité toute la chaîne, cela signifie qu'il a reconnu le motif.
+Lorsque le DFA analyse le mot `ab`, il commence par **S₀**, transitionne vers **S₁** via `a`, puis transitionne vers **S₂**, état final, via `b`. Si le DFA atteint **S₂** après avoir traité toute la chaîne, cela signifie qu'il a reconnu le motif.
 
 Le DFA ne peut avoir qu'une seule transition pour une entrée donnée depuis un état précis, d'où son aspect "déterministe". Si le DFA avait plusieurs transitions possibles pour une entrée depuis un état, il serait considéré comme un NFA (Automate Fini Non Déterministe).
 
 ### Automates Finis Non Déterministes
-Un **automate fini non déterministe**, ou **NFA** (pour **Non-deterministic Finite Automaton**, contrairement aux DFA, peut avoir plusieurs transitions possibles pour un même symbole d'entrée à partir d'un état donné. Cette caractéristique lui offre une flexibilité accrue, mais, souvent, augmente aussi sa complexité d'implémentation.
+Un **automate fini non déterministe**, ou **NFA** (pour **Non-deterministic Finite Automaton**), contrairement aux DFA, peut avoir plusieurs transitions possibles pour un même symbole à partir d'un état donné. Cette caractéristique lui offre une flexibilité accrue, mais, souvent, augmente aussi sa complexité d'implémentation.
 
 ##### Caractéristiques d'un NFA
-* **Plusieurs états possibles pour une entrée** : Un NFA peut transiter vers plusieurs états suite à la lecture d'un symbole d'entrée donné depuis un état spécifique.
-* **Transitions epsilon (ε)** : Les NFA peuvent avoir des transitions `ε`, qui ne nécessitent aucune entrée. Ces transitions permettent à l'automate de changer d'état sans lire de symbole. On distingue parfois les NFA sans transitions `ε` (simplement appelés **NFA**) de ceux avec transitions ε (**NFA-ε**).
+* **Plusieurs états possibles pour un symbole** : Un NFA peut transiter vers plusieurs états via un même un symbole depuis un état spécifique.
+* **Transitions epsilon (ε)** : Les NFA peuvent avoir des transitions `ε`, qui ne nécessitent aucun symbole. Ces transitions permettent à l'automate de changer d'état sans préciser de symbole. On distingue parfois les NFA sans transitions `ε` (simplement appelés **NFA**) de ceux avec transitions `ε` (**NFA-ε**).
 
 #### Exemples de NFA
 
@@ -251,9 +251,9 @@ Représentation graphique :
 * L'état initial est **S₀**.
 * L'état final est **S₂**.
 * Les transitions sont :
-  * De **S₀** à **S₀** avec le symbole `a`
-  * De **S₀** à **S₁** avec le symbole `a`
-  * De S₁ à **S₂** avec le symbole `b`
+  * De **S₀** à **S₀** via `a`
+  * De **S₀** à **S₁** via `a`
+  * De S₁ à **S₂** via `b`
 
 ##### 2. NFA-ε reconnaissant L2 = { aⁿb | n ≥ 0 }.
 Expression régulière : `a*b`
@@ -266,15 +266,15 @@ Représentation graphique :
 * L'état initial est **S₀**.
 * L'état final est **S₂**.
 * Les transitions se décrivent ainsi :
-  * De **S₀** à **S₀** avec `a`
-  * De **S₀** à **S₁** avec `a`
-  * De **S₀** à **S₁** avec ε (sans consommer de symbole)
-  * De **S₁** à **S₂** avec `b`
+  * De **S₀** à **S₀** via `a`
+  * De **S₀** à **S₁** via `a`
+  * De **S₀** à **S₁** via `ε`
+  * De **S₁** à **S₂** via `b`
 
 ###### Traitement de l'entrée : `b`
 * Départ de **S₀**
-* Transition via `ε` vers **S₁**
-* Lecture de `b` et transition vers **S₂**
+* Transition vers **S₁** via `ε`
+* Transition vers **S₂** via `b`
 
 En plus de l'entrée `b`, **L2** accepte toutes les mots de **L1**.
 
@@ -282,7 +282,7 @@ En plus de l'entrée `b`, **L2** accepte toutes les mots de **L1**.
 Du fait de leur nature non-déterministe, les NFA sont généralement plus complexes à implémenter que les DFA. Pour repérer un motif dans une séquence, un NFA va parcourir toutes les trajectoires possibles pour établir si la séquence est conforme au langage défini, ce qui peut entraîner des soucis de performance. 
 
 #### Aller plus loin
-Nous sommes très loin d'avoir abordés toutes les notions propres à la théorie des automates, je pars du principe que beaucoup de lecteurs n'ont pas les bases mathématiques nécessaires ni d'intérêt pour le sujet.
+Nous sommes très loin d'avoir abordé toutes les notions de la théorie des langages, nous en reparlerons un peu lorsque nous nous intéresserons à l'analyse syntaxique. Je pars du principe que beaucoup de lecteurs n'ont pas les bases mathématiques nécessaires ni d'intérêt pour le sujet, mais voici quelques ressources pour les personnes intéressées.
 
 Références :
 - Porter, Harry. (2015). Youtube. [Lecture 1/65: Background: What You Probably Know.](https://www.youtube.com/watch?v=TOsMcgIK95k) (Remise à niveau mathématique)
