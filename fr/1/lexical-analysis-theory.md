@@ -225,8 +225,8 @@ L₁ = { ab }
 * L'état initial est **S₀**
 * L'état final est **S₂** (reconnaissable par sa bordure intérieure)
 * Les transitions sont
-- De **S₀** à **S₁** via `a`
-- De **S₁** à **S₂** via `b`
+  - De **S₀** à **S₁** via `a`
+  - De **S₁** à **S₂** via `b`
 
 Lorsque le DFA analyse le mot `ab`, il commence par **S₀**, transitionne vers **S₁** via `a`, puis transitionne vers **S₂**, état final, via `b`. Si le DFA atteint **S₂** après avoir traité toute la chaîne, cela signifie qu'il a reconnu le motif.
 
