@@ -22,4 +22,3 @@ Visibilité, héritage, interface, classes et méthodes abstraites doivent être
 - Développer un parser
 - Développer un analyseur sémantique
 - Développer une machine virtuelle
-
