@@ -262,7 +262,7 @@ Représentation graphique :
 
 ![Représentation du NFA-ε pour L2](./1-nfa-epsilon.png)
 
-* Il compte 3 états : **S₀**, **S₁**, et **S₂**.
+* L'automate est composé de 3 états : **S₀**, **S₁**, et **S₂**.
 * L'état initial est **S₀**.
 * L'état final est **S₂**.
 * Les transitions se décrivent ainsi :
