@@ -1,6 +1,8 @@
 # Créer un langage de programmation - Développer un scanner 1.1
 ##### Édition TypeScript
 
+> Ce chapitre section est toujours en cours de rédaction et peu contenir des erreurs.
+
 - [Introduction à l'analyse lexicale](#introduction-à-lanalyse-lexicale)
 - [Alphabets, Langages et Grammaires](#alphabets-langages-et-grammaires)
 - [Langages réguliers](#langages-réguliers)
