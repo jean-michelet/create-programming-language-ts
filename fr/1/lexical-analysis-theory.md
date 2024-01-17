@@ -146,7 +146,7 @@ Puisque **L2** est infini, il est plus clair de le représenter sous forme de no
 
 ```
 Σ' = Σ ∖ { % }
-L2 = { %w% | w ∈ Σ' }
+L2 = { %w^n% | w ∈ Σ' }
 ```
 
 Pas de panique, je vais tout vous expliquer :wink:
@@ -166,7 +166,7 @@ Le symbole `|` signifie ***tel que*** et **∈** signifie ***appartenant à*** o
 La notation :
 ```
 Σ' = Σ ∖ { % }
-L2 = { %w% | w ∈ Σ' }
+L2= { %wⁿ% ∣w ∈ Σ′,n >= 1 }
 ```
 
 Signifie donc que :
