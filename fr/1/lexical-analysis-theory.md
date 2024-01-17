@@ -129,7 +129,7 @@ L1 = { aa, bb }
 Ici, **L1** contient uniquement les mots `aa` et `bb`.
 
 #### Exemple de langage infini
-Considérons le langage **L2** défini sur l'alphabet **Σ** dont les mots sont l'ensemble des combinaisons qu'il est possible de créer, encadré par le symbole `%`.
+Considérons le langage **L2** défini sur l'alphabet **Σ** dont les mots sont l'ensemble des mots (de plus de 1 caractère) qu'il est possible de créer, encadré par le symbole `%`.
 
 Si :
 ```
@@ -166,7 +166,7 @@ Le symbole `|` signifie ***tel que*** et **∈** signifie ***appartenant à*** o
 La notation :
 ```
 Σ' = Σ ∖ { % }
-L2= { %wⁿ% ∣w ∈ Σ′,n >= 1 }
+L2 = { %wⁿ% ∣w ∈ Σ′,n >= 1 }
 ```
 
 Signifie donc que :
