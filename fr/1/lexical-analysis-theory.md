@@ -131,7 +131,7 @@ L1 = { aa, bb }
 Ici, **L1** contient uniquement les mots `aa` et `bb`.
 
 #### Exemple de langage infini
-Considérons le langage **L2** défini sur l'alphabet **Σ**, composé de l'ensemble des mots (composés d'au moins 1 symbole) qu'il est possible de créer, encadré par le symbole `%`.
+Considérons le langage **L2** défini sur l'alphabet **Σ**, composé de l'ensemble des mots (composés d'au moins 1 symbole) qu'il est possible de créer, délimités par le symbole `%`.
 
 Si :
 ```
@@ -164,7 +164,6 @@ Autre exemple, pour l'expression régulière `a*`, nous pouvons valider `ε`, `a
 > `ε` (epsilon) est le symbole utilisé pour représenter le mot vide, c'est-à-dire ne contenant aucun symbole.
 
 Si nous souhaitons que **L2** accepte le mot `%%`, alors il suffit d'ajuster notre expression régulière : `%[ab]*%`
-
 
 ## Automates finis
 Un **automate fini**, également connu sous le nom de machine à états fini, est un modèle mathématique utilisé en sciences informatiques pour reconnaître et analyser des motifs ou des séquences au sein d'un texte ou d'une chaîne de symboles. Dans le contexte de l'analyse lexicale, ce modèle est pertinent, car il facilite l'identification des tokens (symboles, mots-clés, chaînes de caractères...).
