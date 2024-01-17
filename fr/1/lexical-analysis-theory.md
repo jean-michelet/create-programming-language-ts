@@ -83,7 +83,7 @@ console.log(acceptString(`"123";`)); // true
 console.log(acceptString(`hello world";`)); // false
 ```
 
-Les expressions régulières ne sont qu'un moyen de générer ce type de programme dynamiquement. Ces programmes peuvent être représentés sous forme de modèle mathématique appelé **automate fini**, nous allons y venir.
+Les moteurs d'expressions régulières ne sont qu'un moyen de générer ce type de programme dynamiquement. Ces programmes peuvent être représentés sous forme de modèle mathématique appelé **automate fini**, nous allons y venir.
 
 ## Alphabets, Langages et Grammaires
 Avant de débuter l'implémentation, il peut être bénéfique de comprendre quelques concepts clé de la théorie des langages.
