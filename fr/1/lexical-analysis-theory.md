@@ -144,38 +144,6 @@ Si :
 L2 = { %aa%, %ab%, %bb%, %aaabbbb%, ... }
 ```
 
-Puisque **L2** est infini, il est plus clair de le représenter sous forme de notation d'ensemble : 
-
-```
-Σ' = Σ ∖ { % }
-L2= { %wⁿ% ∣w ∈ Σ′,n >= 1 }
-```
-
-Pas de panique, je vais tout vous expliquer :wink:
-
-Le symbole `\` est utilisé pour représenter la soustraction d'ensembles.
-
-L'expression `Σ ∖ { % }` représente donc l'ensemble des caractères présents dans l'alphabet **Σ**, moins les éléments présents dans l'ensemble `{ % }`, ainsi :
-
-```
-Σ' = { a, b }
-```
-
-> Le symbole `'` (prime), présent dans `Σ'` permet généralement d'indiquer une variation, une dérivation ou une modification d'un élément existant.
-
-Le symbole `|` signifie ***tel que*** et **∈** signifie ***appartenant à*** ou ***est un élément de***.
-
-La notation :
-```
-Σ' = Σ ∖ { % }
-L2 = { %wⁿ% ∣w ∈ Σ′,n >= 1 }
-```
-
-Signifie donc que :
-
-1) `w` est un mot délimité de part et d'autre par le caractère  `%`
-2) `w` est composé uniquement de symboles appartenant à l'ensemble `{ a, b }`.
-
 ### Langages réguliers
 **L2** est un langage formel dit régulier (ou rationnel). Un langage régulier est un langage qui est accepté par un **automate fini** (encore une fois, nous allons y venir).
 
