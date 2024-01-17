@@ -141,7 +141,7 @@ Si :
 **L2** prend la forme suivante :
 
 ```
-L2 = { %aa%, %ab%, %bb%, %aaabbbb%, ... }
+L2 = { %aa%, %ab%, %bb%, %bba%, %aabbaaab%, ... }
 ```
 
 ### Langages réguliers
