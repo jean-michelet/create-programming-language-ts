@@ -179,7 +179,7 @@ Un **automate fini déterministe** ou **DFA** (Deterministic Finite Automaton) e
 
 Prenons l'exemple d'un **DFA** pour le langage :
 ```
-L₁ = { ab }
+L1 = { ab }
 ```
 
 | ![Automate /^ab$/](./1-automate-ab.png) |
