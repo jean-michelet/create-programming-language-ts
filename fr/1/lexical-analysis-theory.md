@@ -24,18 +24,6 @@ Quelques exemples:
 | Opérateur                                     | `+`, `=`, `>=`, `&&`                       |
 | Identifiant (nom de variable, fonction, etc)  | `x`, `printf`                              |
 
-Ces lexèmes peuvent être décrits par des expressions régulières :
-
-| Lexème    | Expression régulière  |
-|-----------|-----------------------|
-| if        | `\bif\b`               |
-| while     | `\bwhile\b`            |
-| class     | `\bclass\b`            |
-| +         | `^\+`                  |
-| =         | `^=`                   |
-| &&        | `^&&`                  |
-
-
 ### Exemple d'analyse lexicale
 Prenons l'instruction suivante :
 ```js
@@ -49,7 +37,7 @@ Le scanner la découpe en plusieurs tokens :
 - `10` (Littéral - int)
 - `;` (Symbole)
 
-Si les lexèmes peuvent être décrits par des expressions régulières, alors nous pouvons utiliser un moteur de regex pour les identifier, et même les extraire du code source. Par exemple, JavaScript propose la classe `RegExp` :
+Les tokens peuvent être décrits par des expressions régulières. Il est donc possible d'utiliser un moteur de regex pour les identifier, et même les extraire du code source. Par exemple, JavaScript propose la classe `RegExp` :
 
 ```js
 const stringRegex = new RegExp(`^"[^"]*"`);
