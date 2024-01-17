@@ -95,7 +95,7 @@ Les **langages naturels** sont ceux que nous utilisons au quotidien, comme le fr
 
 Les **langages formels** suivent un ensemble de règles strictes : grammaire formelle. Ils excluent toute incertitude et toute ambiguïté.
 
-Vous vous en doutez probablement, pour créer un langage de programmation, nous avons besoin d'une grammaire formelle. Donc, dans ce cours, lorsque nous nous évoquerons les termes « alphabet », « mot » et « grammaire », nous nous référons strictement aux langages formels.
+Vous vous en doutez probablement, pour créer un langage de programmation, nous avons besoin d'une grammaire formelle. Donc, dans ce cours, lorsque nous évoquerons les termes « alphabet », « mot » et « grammaire », nous nous référons strictement aux langages formels.
 
 ### Alphabets et mots
 Un alphabet est défini comme un ensemble **fini** et **non-vide** de symboles. Ces symboles peuvent être assemblés pour former des **mots** (ou **strings** en anglais). 
