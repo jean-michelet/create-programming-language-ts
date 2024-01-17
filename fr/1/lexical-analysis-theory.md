@@ -152,10 +152,6 @@ L2 = { %aa%, %ab%, %bb%, %bba%, %aabbaaab%, ... }
 %[ab]+%
 ```
 
-Sympa, non ? 
-J'ai fait exprès de vous titiller un peu avec une notation d'ensemble, pour que vous commenciez à apprécier le concept d'expression régulière, souffrant souvent injustement d'une mauvaise image, alors qu'elles sont, utilisées dans le bon contexte, d'une aide précieuse.
-
-
 Maintenant, souvenez-vous de l'expression régulière permettant de scanner un token de type **string** : 
 ```
 "[^"]*"
