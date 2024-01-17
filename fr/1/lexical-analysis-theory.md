@@ -146,7 +146,7 @@ Puisque **L2** est infini, il est plus clair de le représenter sous forme de no
 
 ```
 Σ' = Σ ∖ { % }
-L2 = { %w^n% | w ∈ Σ' }
+L2= { %wⁿ% ∣w ∈ Σ′,n >= 1 }
 ```
 
 Pas de panique, je vais tout vous expliquer :wink:
