@@ -15,7 +15,7 @@ Comme nous l'avons vu dans le chapitre d'introduction, l'analyse lexicale est l'
 ### Les tokens
 Chaque token peut être défini par un type et un lexème, qui est sa représentation textuelle dans le code source. 
 
-Quelques exemples:
+Quelques exemples :
 
 | Type                                          | Lexèmes                                    |
 |-----------------------------------------------|--------------------------------------------|
@@ -90,9 +90,9 @@ Les **langages formels** suivent un ensemble de règles strictes : grammaire for
 Vous vous en doutez probablement, pour créer un langage de programmation, nous avons besoin d'une grammaire formelle. Donc, dans ce cours, lorsque nous évoquerons les termes « alphabet », « mot » et « grammaire », nous nous référons strictement aux langages formels.
 
 ### Alphabets et mots
-Un alphabet est défini comme un ensemble **fini** et **non-vide** de symboles. Ces symboles peuvent être assemblés pour former des **mots** (ou **strings** en anglais). 
+Un alphabet est un ensemble **fini** et **non-vide** de symboles. Ces symboles peuvent être assemblés pour former des **mots** (ou **strings** en anglais). 
 
-- **fini**, car ne peut pas contenir une infinité de symboles. <br />
+- **fini**, car ne peut pas contenir une infinité de symboles.
 - **non-vide**, car doit contenir au moins un symbole.
 
 Par convention, un alphabet est souvent désigné par la lettre **Σ** (se prononce Sigma).
@@ -129,7 +129,6 @@ Si :
 ```
 
 **L2** prend la forme suivante :
-
 ```
 L2 = { %aa%, %ab%, %bb%, %bba%, %aabbaaab%, ... }
 ```
