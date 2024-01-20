@@ -8,7 +8,6 @@
 - [Langages réguliers](#langages-réguliers)
 - [Automates finis](#automates-finis)
 
-
 ## Introduction à l'analyse lexicale
 Comme nous l'avons vu dans le chapitre d'introduction, l'analyse lexicale est l'analyse et le découpage d'un code source en une suite de tokens. Le programme en charge de l'analyse lexicale est généralement appelé **scanner**, **lexer** ou **tokenizer**. 
 
@@ -16,7 +15,6 @@ Comme nous l'avons vu dans le chapitre d'introduction, l'analyse lexicale est l'
 Chaque token peut être défini par un type et un lexème, qui est sa représentation textuelle dans le code source. 
 
 Quelques exemples :
-
 | Type                                          | Lexèmes                                    |
 |-----------------------------------------------|--------------------------------------------|
 | Littéral                                      | `2`, `true`, `"hello"`                     |
@@ -168,18 +166,18 @@ console.log(/%[ab]*%/.test("%%"))
 ```
 
 ## Automates finis
-Un **automate fini**, également connu sous le nom de machine à états fini, est un modèle mathématique utilisé en sciences informatiques pour reconnaître et analyser des motifs ou des séquences au sein d'un texte ou d'une chaîne de symboles. Dans le contexte de l'analyse lexicale, ce modèle est pertinent, car il facilite l'identification des tokens (symboles, mots-clés, chaînes de caractères...).
+Un **automate fini**, également connu sous le nom de machine à états fini, est un modèle mathématique utilisé en sciences informatiques pour reconnaître et analyser des motifs ou des séquences au sein d'un texte ou d'une chaîne de symboles. Dans le contexte de l'analyse lexicale, ce modèle est pertinent, car il permet d'identifier des tokens (symboles, mots-clés, chaînes de caractères...) dans un code source.
 
 ### Structure d'un automate fini
-* **États** : Ils représentent les positions ou situations possibles de l'automate.
-* **Transitions** : Les mouvements que l'automate peut effectuer d'un état à un autre à partir d'un symbole.
-* **État de départ** : L'état initial où l'automate débute son parcours.
-* **États d'acceptation** : Atteindre ces états signifie que l'automate a reconnu le motif recherché.
+* **États** : ils représentent les positions ou situations possibles de l'automate.
+* **Transitions** : les mouvements que l'automate peut effectuer d'un état à un autre pour un symbole.
+* **État de départ** : l'état initial où l'automate débute son parcours.
+* **États d'acceptation** : atteindre ces états signifie que l'automate a reconnu le motif recherché.
 
 ### Automates Finis Déterministes
-Un **automate fini déterministe** ou **DFA** (Deterministic Finite Automaton) en anglais, reconnaît des motifs simples et déterministes. Il a un nombre fini d'états, et pour chaque état, une symbole spécifique conduit à un état déterminé.
+Un **automate fini déterministe** ou **DFA** (Deterministic Finite Automaton) en anglais, reconnaît des motifs simples et déterministes. Un DFA est déterministe car il ne peut effectuer qu'une seule transition pour un même symbole depuis un état donné.
 
-Prenons l'exemple d'un **DFA** pour le langage :
+Prenons l'exemple d'un **DFA** pour le langage **L1** :
 ```
 L1 = { ab }
 ```
@@ -195,12 +193,15 @@ L1 = { ab }
   - De **S₀** à **S₁** via `a`
   - De **S₁** à **S₂** via `b`
 
-Lorsque le DFA analyse le mot `ab`, il commence par **S₀**, transitionne vers **S₁** via `a`, puis transitionne vers **S₂**, état final, via `b`. Si le DFA atteint **S₂** après avoir traité toute la chaîne, cela signifie qu'il a reconnu le motif.
+###### Traitement de l'entrée : `ab`
+* Départ de **S₀**
+* Transition vers **S₁** via `a`
+* Transition vers **S₂** via `b`
 
-Le DFA ne peut avoir qu'une seule transition pour un symbole donnée depuis un état précis, d'où son aspect "déterministe". Si le DFA avait plusieurs transitions possibles pour un symbole depuis un état, il serait considéré comme un NFA (Automate Fini Non Déterministe).
+Si le DFA atteint **S₂** après avoir analysé toute la chaîne, cela signifie qu'il a reconnu la séquence de symboles.
 
 ### Automates Finis Non Déterministes
-Un **automate fini non déterministe**, ou **NFA** (pour **Non-deterministic Finite Automaton**), contrairement aux DFA, peut avoir plusieurs transitions possibles pour un même symbole à partir d'un état donné. Cette caractéristique lui offre une flexibilité accrue, mais, souvent, augmente aussi sa complexité d'implémentation.
+Un **automate fini non déterministe**, ou **NFA** (pour **Non-deterministic Finite Automaton**), contrairement aux DFA, peut avoir plusieurs transitions pour un même symbole depuis un état donné. Cette caractéristique lui offre une flexibilité accrue sur le plan théorique, mais souvent peu adaptée à une implémentation concrète.
 
 ##### Caractéristiques d'un NFA
 * **Plusieurs états possibles pour un symbole** : Un NFA peut transiter vers plusieurs états via un même un symbole depuis un état spécifique.
@@ -232,7 +233,7 @@ Représentation graphique :
 * L'automate est composé de 3 états : **S₀**, **S₁**, et **S₂**.
 * L'état initial est **S₀**.
 * L'état final est **S₂**.
-* Les transitions se décrivent ainsi :
+* Les transitions sont :
   * De **S₀** à **S₀** via `a`
   * De **S₀** à **S₁** via `a`
   * De **S₀** à **S₁** via `ε`
@@ -246,13 +247,12 @@ Représentation graphique :
 En plus de l'entrée `b`, **L2** accepte toutes les mots de **L1**.
 
 ### Conversion de NFA en DFA
-Du fait de leur nature non-déterministe, les NFA sont généralement plus complexes à implémenter que les DFA. Pour repérer un motif dans une séquence, un NFA va parcourir toutes les trajectoires possibles pour établir si la séquence est conforme au langage défini, ce qui peut entraîner des soucis de performance. 
+Du fait de leur nature non-déterministe, les NFA sont généralement complexes à implémenter. C'est pour ça qu'il sont souvent [convertis en DFA](https://www.youtube.com/watch?v=jMxuL4Xzi_A).
 
 ## Conclusion
 Il faut donc bien comprendre qu'un langage régulier est un langage formel pouvant être reconnu par un automate fini, et pouvant être décrit par une expression régulière.
 
 Nous sommes très loin d'avoir abordé toutes les notions de la théorie des langages, nous en reparlerons un peu lorsque nous nous intéresserons à l'analyse syntaxique. Je pars du principe que beaucoup de lecteurs n'ont pas les bases mathématiques nécessaires ni d'intérêt pour le sujet, mais vous pouvez consulter les ressources présentes dans la section **Aller plus loin**.
-
 
 ## Aller plus loin
 - Porter, Harry. (2015). Youtube. [Lecture 1/65: Background: What You Probably Know.](https://www.youtube.com/watch?v=TOsMcgIK95k) (Remise à niveau mathématique)
