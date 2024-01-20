@@ -72,10 +72,10 @@ console.log(acceptString(`hello world`)); // false
 console.log(acceptString(`123`)); // false
 ```
 
-Les moteurs d'expressions régulières ne sont qu'un moyen de générer ce type de programme dynamiquement. Ces programmes peuvent être représentés sous forme de modèle mathématique appelé **automate fini**, nous allons y venir.
+Les moteurs d'expressions régulières sont un moyen de générer ce type de programme dynamiquement. Ces programmes peuvent être représentés sous forme de modèle mathématique appelé [**automate fini**](#automates-finis), nous allons y venir.
 
 ## Alphabets, Langages et Grammaires
-Avant de débuter l'implémentation, il peut être bénéfique de comprendre quelques concepts clé de la théorie des langages.
+Avant de débuter l'implémentation, il peut être bénéfique de comprendre quelques concepts clé de la théorie des langages formels.
 
 ### Langages naturels et langages formels
 Commençons par bien distinguer langages naturels et langages formels.
@@ -89,25 +89,27 @@ Vous vous en doutez probablement, pour créer un langage de programmation, nous 
 ### Alphabets et mots
 Un alphabet est un ensemble **fini** et **non-vide** de symboles. Ces symboles peuvent être assemblés pour former des **mots** (ou **strings** en anglais). 
 
-- **fini**, car ne peut pas contenir une infinité de symboles.
-- **non-vide**, car doit contenir au moins un symbole.
+- **fini**, car contient une infinité de symboles.
+- **non-vide**, car contient au moins un symbole.
 
 Par convention, un alphabet est souvent désigné par la lettre **Σ** (se prononce Sigma).
 
-Exemple 1 : 
+#### Exemple 1
+À partir de cet alphabet :
 ```
-Σ = {1, 2, 3}
+Σ = { 1, 2, 3 }
 ```
-Mots qu'il est possible de créer : `1`, `12`, `123`, `321`, etc.
+Nous pouvons créer les mots  : `1`, `12`, `123`, `321`, etc.
 
-Exemple 2 : 
+#### Exemple 2
+À partir de cet alphabet :
 ```
-Σ = {+, -, =}
+Σ = { +, -, = }
 ```
-Mots qu'il est possible de créer : `+`, `-`, `=`, `+=`, `-=`, `==`, `===`, etc.
+Nous pouvons créer les mots : `+`, `-`, `=`, `+=`, `-=`, `==`, `===`, etc.
 
 ### Langages
-Un **langage** est un ensemble de mots formés à partir d'un **alphabet**. Ces ensembles peuvent être soit finis, soit infinis.
+Un **langage** est un ensemble de mots formés à partir d'un **alphabet**. Il peut contenir un nombre fini ou infini de mots.
 
 #### Exemple de langage fini
 ```
@@ -118,9 +120,9 @@ L1 = { aa, bb }
 Ici, **L1** contient uniquement les mots `aa` et `bb`.
 
 #### Exemple de langage infini
-Considérons le langage **L2** défini sur l'alphabet **Σ**, composé de l'ensemble des mots (composés d'au moins 1 symbole) qu'il est possible de créer, délimités par le symbole `%`.
+Considérons le langage **L2** défini sur un alphabet **Σ**, composé de l'ensemble des mots de taille **n >= 1** qu'il est possible de créer avec les symboles `{ a, b }` et délimités par le symbole `%`. 
 
-Si :
+Pour :
 ```
 Σ = { %, a, b }
 ```
@@ -131,11 +133,22 @@ L2 = { %aa%, %ab%, %bb%, %bba%, %aabbaaab%, ... }
 ```
 
 ### Langages réguliers
-**L1** et **L2** sont des langages formels dits réguliers (ou rationnels). Un langage régulier est un langage qui est accepté par un **automate fini** (encore une fois, nous allons y venir).
+**L1** et **L2** sont des langages formels dits réguliers (ou rationnels). Un langage régulier est un langage qui est accepté par un [**automate fini**](#automates-finis).
 
 [Stephen Cole Kleene](https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re) a inventé les expressions régulières pour représenter ce type de langage, voici **L2** sous forme d'expression régulière :
 ```
 %[ab]+%
+```
+
+```js
+const regex = /%[ab]+%/
+
+console.log(regex.test("%a%")) // true
+console.log(regex.test("%b%")) // true
+console.log(regex.test("%abaaabbb%")) // true
+console.log(regex.test("ab")) // false
+console.log(regex.test("ab%")) // false
+console.log(regex.test("%ab")) // false
 ```
 
 Maintenant, souvenez-vous de l'expression régulière permettant de scanner un token de type **string** : 
@@ -143,13 +156,16 @@ Maintenant, souvenez-vous de l'expression régulière permettant de scanner un t
 "[^"]*"
 ```
 
-On y observe la présence du symbole `*`, il s'agit de [l'étoile de Kleene](https://fr.wikipedia.org/wiki/%C3%89toile_de_Kleene), en référence au mathématicien dont on vient de parler. Elle indique ici qu'un caractère dans `[^"]` (tout caractère à l'exception de `"`) peut apparaître zéro ou plusieurs fois. Donc `""`, `"Hello, world!"` sont des chaînes acceptées par `"[^"]*"`.
+On y observe la présence du symbole `*`, il s'agit de [l'étoile de Kleene](https://fr.wikipedia.org/wiki/%C3%89toile_de_Kleene), en référence au mathématicien dont on vient de parler. Elle indique ici qu'un caractère dans `[^"]` (soit, tout caractère à l'exception de `"`) peut apparaître zéro ou plusieurs fois. Donc `""`, `"Hello, world!"` sont des chaînes acceptées par `"[^"]*"`.
 
 Autre exemple, pour l'expression régulière `a*`, nous pouvons valider `ε`, `a`, `aa`, `aaa`, etc.
 
 > `ε` (epsilon) est le symbole utilisé pour représenter le mot vide, c'est-à-dire ne contenant aucun symbole.
 
-Si nous souhaitons que **L2** accepte le mot `%%`, alors il suffit d'ajuster notre expression régulière : `%[ab]*%`
+Si nous souhaitons que **L2** accepte le mot `%%`, alors il suffit d'ajuster notre expression régulière en utilisant l'étoile de Kleene : 
+```js
+console.log(/%[ab]*%/.test("%%"))
+```
 
 ## Automates finis
 Un **automate fini**, également connu sous le nom de machine à états fini, est un modèle mathématique utilisé en sciences informatiques pour reconnaître et analyser des motifs ou des séquences au sein d'un texte ou d'une chaîne de symboles. Dans le contexte de l'analyse lexicale, ce modèle est pertinent, car il facilite l'identification des tokens (symboles, mots-clés, chaînes de caractères...).
