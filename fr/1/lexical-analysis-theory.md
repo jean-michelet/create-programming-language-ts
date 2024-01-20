@@ -158,11 +158,11 @@ Maintenant, souvenez-vous de l'expression régulière permettant de scanner un t
 
 On y observe la présence du symbole `*`, il s'agit de [l'étoile de Kleene](https://fr.wikipedia.org/wiki/%C3%89toile_de_Kleene), en référence au mathématicien dont on vient de parler. Elle indique ici qu'un caractère dans `[^"]` (soit, tout caractère à l'exception de `"`) peut apparaître zéro ou plusieurs fois. Donc `""`, `"Hello, world!"` sont des chaînes acceptées par `"[^"]*"`.
 
-Autre exemple, pour l'expression régulière `a*`, nous pouvons valider `ε`, `a`, `aa`, `aaa`, etc.
+Autre exemple, l'expression régulière `a*`, accepte les mots `ε`, `a`, `aa`, `aaa`, etc.
 
 > `ε` (epsilon) est le symbole utilisé pour représenter le mot vide, c'est-à-dire ne contenant aucun symbole.
 
-Si nous souhaitons que **L2** accepte le mot `%%`, alors il suffit d'ajuster notre expression régulière en utilisant l'étoile de Kleene : 
+Si nous souhaitons accepter l'ensemble des mots de **L2**, ainsi que le mot `%%`, il suffit d'ajuster notre expression régulière en utilisant l'étoile de Kleene :
 ```js
 console.log(/%[ab]*%/.test("%%"))
 ```
