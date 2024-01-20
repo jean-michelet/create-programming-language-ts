@@ -34,45 +34,42 @@ Le scanner la découpe en plusieurs tokens :
 - `let` (Mot-clé)
 - `x` (Identifiant)
 - `=` (Opérateur)
-- `10` (Littéral - int)
+- `10` (Littéral - number)
 - `;` (Symbole)
 
-Les tokens peuvent être décrits par des expressions régulières. Il est donc possible d'utiliser un moteur de regex pour les identifier, et même les extraire du code source. Par exemple, JavaScript propose la classe `RegExp` :
+Les tokens peuvent être décrits par des expressions régulières. Il est donc possible d'utiliser un moteur d'expression régulière pour les identifier, et même les extraire du code source. Par exemple, JavaScript propose la classe `RegExp` :
 
 ```js
-const stringRegex = new RegExp(`^"[^"]*"`);
+const stringRegex = new RegExp(`^"[^"]*"$`);
 
-console.log(stringRegex.test(`"hello world";`)); // true
-
-console.log(stringRegex.test(`"123";`)); // true
-
-console.log(stringRegex.test(`hello world;`)); // false
+console.log(stringRegex.test(`"hello world"`)); // true
+console.log(stringRegex.test(`"123"`)); // true
+console.log(stringRegex.test(`hello world`)); // false
+console.log(stringRegex.test(`123`)); // false
 ```
-
-Ci-dessus, nous souhaitons détecter un token dont le premier caractère est `"`, en utilisant le symbole `^`. On matche un token à la fois, c'est pour ça que la présence du point-virgule en fin de chaîne n'est pas un problème.
 
 > **Astuce JS** : vous pouvez définir une instance de RegExp de manière plus concise avec la syntaxe suivante :
 
 > ```ts 
-> const stringRegex = /^"[^"]*"/
+> const stringRegex = /^"[^"]*"$/
 > ```
 
-Cependant, il est tout à fait possible d'atteindre le même objectif avec une fonction :
+Ci-dessus, nous souhaitons détecter un token littéral correspondant à une chaîne de caractère. Cependant, il est tout à fait possible d'atteindre le même objectif avec une fonction :
 
 ```ts
-function acceptString(src: string) {
-  if (src[0] !== `"`) return false;
+function acceptString(src) {
+  let i = 0;
+  if (src[i++] !== `"`) return false;
 
-  while (src.length > 0 && src[0] !== `"`) {
-    src = src.slice(1);
-  }
+  while (src[i] && src[i] !== `"`) i++;
 
-  return src[0] === `"`;
+  return src[i] === `"` && !src[i+1];
 }
 
-console.log(acceptString(`"hello world";`)); // true
-console.log(acceptString(`"123";`)); // true
-console.log(acceptString(`hello world";`)); // false
+console.log(acceptString(`"hello world"`)); // true
+console.log(acceptString(`"123"`)); // true
+console.log(acceptString(`hello world`)); // false
+console.log(acceptString(`123`)); // false
 ```
 
 Les moteurs d'expressions régulières ne sont qu'un moyen de générer ce type de programme dynamiquement. Ces programmes peuvent être représentés sous forme de modèle mathématique appelé **automate fini**, nous allons y venir.
