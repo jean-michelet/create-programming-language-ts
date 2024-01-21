@@ -63,7 +63,7 @@ Admettons que vous souhaitiez partager un article rédigé en anglais à un publ
 Autre situation, vous êtes journaliste et vous apprêtez à traduire en direct le discours d'un homme politique chinois. Ne sachant pas à l'avance ce qui va être dit, vous allez donc devoir traduire et retranscrire le discours en direct. Cette situation est similaire au principe d'interprétation. Vous venez d'interpréter un langage source (chinois) et l'avez retranscrit en direct en français.
 
 ### Interpréteur d'AST
-Un arbre de la syntaxe abstraite ou AST (Abstract Syntax Tree) en anglais, est une représentation arborescente de la structure syntaxique d'un code source. Chaque nœud représente une construction dans le langage (par exemple, une expression, une instruction, etc.).
+Un arbre de la syntaxe abstraite ou AST (Abstract Syntax Tree) en anglais, est une représentation arborescente de la structure syntaxique d'un code source. Chaque nœud représente une construction dans le langage (opération arithmétique, déclaration de variable, boucle, condition, etc.).
 
 Prenons l'exemple d'une déclaration de variable :
 ```javascript
@@ -100,11 +100,13 @@ ADD
 
 Explications :
 
-- `LOAD_CONST 0` : Récupère la valeur `1`, stockée dans la pile des constantes à l'index `0`.
-- `LOAD_CONST 1` : Récupère la valeur `3`, stockée dans la pile des constantes à l'index `1`.
-- `LOAD_VAR 0` : Récupère la valeur associée à l'identifiant `y` dans la pile des variables à l'index `0`.
-- `MUL` : Multiplie les deux dernières valeurs sur la pile (dans ce cas, `3` et la valeur de `y`).
-- `ADD` : Ajoute les deux dernières valeurs sur la pile (dans ce cas, le produit de `3 * y` et `1`).
+- `LOAD_CONST 0` : récupère la valeur `1`, stockée dans la pile des constantes à l'index `0`.
+- `LOAD_CONST 1` : récupère la valeur `3`, stockée dans la pile des constantes à l'index `1`.
+- `LOAD_VAR 0` : récupère la valeur associée à l'identifiant `y` dans la pile des variables à l'index `0`.
+- `MUL` : multiplie les deux dernières valeurs sur la pile (dans ce cas, `3` et la valeur de `y`).
+- `ADD` : ajoute les deux dernières valeurs sur la pile (dans ce cas, le produit de `3 * y` et `1`).
+
+> Pas d'inquiétude si ces explications vous semblent obscures à ce jour.
 
 #### Just-in-time (JIT) compilation
 Par ailleurs, les machines virtuelles permettent généralement des techniques d'optimisation avancées telles que la [compilation à la volée](https://en.wikipedia.org/wiki/Just-in-time_compilation), ou JIT compilation en anglais, qui consiste à compiler le bytecode en code machine au moment de l'exécution.
@@ -118,9 +120,11 @@ Pour en savoir plus :
 - [BlinkOn 6 Day 1 Talk 2: Ignition - an interpreter for V8](https://www.youtube.com/watch?v=r5OWCtuKiAk) (commence à dater un peu)
 - https://medium.com/dailyjs/understanding-v8s-bytecode-317d46c94775
 
+Si le sujet des moteurs JavaScript vous intéresse particulièrement, je vous recommande de consulter [ce dépôt](https://github.com/fraxken/VM-Resources).
+
 
 ## Étapes de compilation
-Dans ce cours, nous n'allons pas développer un compilateur à proprement parler. Cependant, les compilateurs et les interpréteurs ont des points communs, c'est pourquoi étudier les principales phases de la compilation peut être bénéfique.
+Dans ce cours, nous n'allons pas développer un compilateur à proprement parler, même si nous allons apprendre à émettre du bytecode. Cependant, les compilateurs traditionnels et les interpréteurs ont des points communs, c'est pourquoi étudier les principales phases de la compilation peut être bénéfique.
 
 > **Note :** Le nombre d'étapes et leur implémentation peuvent varier d'un compilateur à l'autre.
 
@@ -130,7 +134,25 @@ La phase d'analyse lexicale consiste en l'analyse et en le découpage du code so
 Par exemple, le code `x + 4;` est analysé puis découpé en une suite de tokens :
 `{ x, +, 4, ; }`
 
-Exemple de token invalide en JavaScript :
+#### Pourquoi scanner ?
+Je vais vous le démontrer avec un simple exemple, pouvez-vous me dire ce que signifie ce code ?
+```js
+Ak;;; ùù=,* ?.?;:! ù%%µ*
+```
+
+Aucune idée ?
+
+Bon, on essaie un autre code :
+```js
+function )while = 0(;
+```
+
+Ok, ce code est faux, mais je pense qu'il vous parle déjà plus que le code précédent.
+Pour une raison simple, vous avez reconnu un ensemble d'éléments tels que des mots-clés (`function` et `while`) et des symbôles (`(`, `)`, `=` et `;`).
+
+Comme vous pouvez le constater, avant de se poser la question de la validité de notre code, il faut être en mesure de reconnaître ses éléments constitutifs (tokens).
+
+Maintenant, vous comprenez mieux ce type d'erreur :
 ```js
 console.log("Hello, World!");@
 ```
@@ -149,9 +171,11 @@ La phase d'analyse syntaxique permet d'examiner la structure du programme afin d
 
 Par exemple, le code `if (;` est validé par le scanner, mais rejeté par le parser.
 
-Le plus souvent, l'analyseur syntaxique produit un AST. En plus des avantages cités [précédemment](#interpréteur-dast), générer un AST permet de résoudre certaines ambiguïtés. Par exemple, cette suite de tokens `{1, +, 2, /, 3}` est valide, mais faut-il commencer par résoudre l'addition ou la division ? L'AST est généré de sorte à respecter [la précédence des opérateurs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence).
+Par ailleurs, l'analyse syntaxique permet de résoudre certaines ambiguïtés.
+Par exemple, le code `1 + 2 / 3` est valide, mais faut-il commencer par résoudre l'addition ou la division ?
 
-#### Exemple de génération d'AST
+#### Génération d'AST
+Le plus souvent, l'analyseur syntaxique génère un AST, pour les raisons évoquées [précédemment](#interpréteur-dast).
 
 Prenons l'exemple d'une déclaration de variable :
 ```js
@@ -260,15 +284,16 @@ int main()
 }
 ```
 
-Ces erreurs montrent que, même si le code est syntaxiquement correct, il peut néanmoins comporter des erreurs logiques qui empêchent sa compilation ou son exécution. L'analyse sémantique est donc essentielle pour garantir la fiabilité du code.
+Ces erreurs montrent que, même si le code est syntaxiquement correct, il peut néanmoins comporter des erreurs logiques. 
+L'analyse sémantique est donc essentielle pour garantir la fiabilité du code.
 
 ### Génération de code intermédiaire
 La transformation du code source en une représentation intermédaire abstraite et indépendante de l’architecture cible permet de faciliter l'optimisation du code et assurer la portabilité entre différents environnements d'exécution.
 
 Exemples de structures intermédiaires :
-- Bytecode
-- LLVM IR (IR signifie souvent **Intermediate Representation**)
-- Three-Address Code
+- [Bytecode](https://en.wikipedia.org/wiki/Bytecode)
+- [LLVM](https://llvm.org/) IR (IR signifie souvent **Intermediate Representation**)
+- [Three-Address Code](https://en.wikipedia.org/wiki/Three-address_code)
 
 ### Optimisation de code intermédiaire
 L'optimisation du code intermédiaire a pour but d'améliorer les performances du programme.
@@ -310,3 +335,16 @@ Le code intermédiaire est ensuite transformé en code machine :
 |:--:| 
 | Compilation d'un code C en code objet (*affichage sous forme hexadécimale*) |
 <br>
+
+### Front-end, Middle-end et Back-end
+Le processus de compilation peut-être divisée en trois grande étapes :
+
+- Le **front-end** est la phase d'analyse du code source : analyse lexicale, syntaxique et sémantique.
+- Le **middle-end** (qui n'est pas une fin (*end*) du tout) est la phase de génération et d'optimisation de code intermédiaire.
+- Le **back-end** est la phase de génération du code cible.
+
+Le middle-end (représentation intermédiaire) permet de rendre le front-end (code source) indépendant du back-end (code cible).
+
+
+
+
