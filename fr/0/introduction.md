@@ -336,15 +336,20 @@ Le code intermédiaire est ensuite transformé en code machine :
 | Compilation d'un code C en code objet (*affichage sous forme hexadécimale*) |
 <br>
 
+### Représentation graphique
+| ![](./0-compilation-flow-global.png) |
+|:--:|
+| Les étapes de la compilation |
+
 ### Front-end, Middle-end et Back-end
-Le processus de compilation peut-être divisée en trois grande étapes :
+Le processus de compilation peut-être divisée en trois grandes étapes :
 
 - Le **front-end** est la phase d'analyse du code source : analyse lexicale, syntaxique et sémantique.
-- Le **middle-end** (qui n'est pas une fin (*end*) du tout) est la phase de génération et d'optimisation de code intermédiaire.
+- Le **middle-end** est la phase de génération et d'optimisation de code intermédiaire.
 - Le **back-end** est la phase de génération du code cible.
 
-Le middle-end (représentation intermédiaire) permet de rendre le front-end (code source) indépendant du back-end (code cible).
+Le middle-end permet de rendre le front-end indépendant du back-end.
 
-
-
-
+| ![](./0-compilation-flow.png) |
+|:--:|
+| Front-end, Middle-end et Back-end |
