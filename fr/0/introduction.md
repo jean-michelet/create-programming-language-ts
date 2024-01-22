@@ -40,9 +40,11 @@ Tout simplement, car *je* lui trouve des avantages pédagogiques :
 - Système de typage relativement avancé (génériques, unions, intersections…)
 - Haut niveau, simple d’utilisation
 - Appartient syntaxiquement à la famille des langages C (syntaxe populaire)
-- Propose un paradigme orienté objet class-based : classes, interfaces, visibilité… (paradigme populaire : C++, Java, C#, PHP, Ruby, Python...)
+- Propose un paradigme orienté objet class-based : classes, interfaces, visibilité… (Paradigme populaire : C++, Java, C#, PHP, Ruby, Python...)
 
 Mais, rassurez-vous, connaître TypeScript n'est absolument pas nécessaire pour suivre ce cours. Je vous conseille même d'utiliser votre langage de prédilection si cela vous permet d'être plus à l'aise.
+
+J'en profite d'ailleurs pour préciser aux développeurs JavaScript qu'il se peut que je n'utilise pas certaines constructions du langage. Donc si vous me lisez proposer de bonnes vieilles boucle `for`, c'est normal.
 
 ## Langages de programmation compilés vs interprétés
 Bon, avant de nous lancer dans des sujets plus pointus, il serait bon de définir quelques concepts.
