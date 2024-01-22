@@ -1,4 +1,4 @@
-# Créer un langage de programmation - Développer un scanner 1.1
+# Créer un langage de programmation - Développer un scanner 1/2
 ##### Édition TypeScript
 
 > Ce chapitre est toujours en cours de rédaction et peut contenir des erreurs.
