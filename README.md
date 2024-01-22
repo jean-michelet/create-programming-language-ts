@@ -40,7 +40,7 @@ Visibilité, héritage, interface, classes et méthodes abstraites doivent être
 ## EduScript
 Le langage que nous allons développer se nomme **EduScript**, le code source se trouve dans le dossier `/eduscript`, les composants seront ajoutés progressivement lors de la publication des chapitres correspondants.
 
-Le langage **EduScript** sera un langage typé statiquement très élémentaire avec une syntaxe très similaire à **TypeScript**. Le but est de rédiger les chapitres le plus rapidement possible afin de vous donner une vision d'ensemble. Se perdre dans des détails trop complexes, trop rapidement, aura le même effet que bon nombre de livres et cours sur le sujet, vous décourager. De plus, développer un langage très élémentaire vous donne l'opportunité de l'enrichir, et donc de véritablement progresser en vous creusant un peu les méninges. N'importe qui peut copier-coller du code, appliquer bêtement, mais ajouter sa pierre à l'édifice est une autre paire de manches.
+**EduScript** est un langage typé statiquement très élémentaire avec une syntaxe très similaire à **TypeScript**. Le but est de rédiger les chapitres le plus rapidement possible afin de vous donner une vision d'ensemble. Se perdre dans des détails trop complexes, trop rapidement, aura le même effet que bon nombre de livres et cours sur le sujet, vous décourager. De plus, développer un langage très élémentaire vous donne l'opportunité de l'enrichir, et donc de véritablement progresser en vous creusant un peu les méninges. N'importe qui peut copier-coller du code, appliquer bêtement, mais ajouter sa pierre à l'édifice est une autre paire de manches.
 
 Des ressources additionnelles vous seront communiquées lorsque que je décide de ne pas approfondir un sujet spécifique, il est de votre responsabilité d'aller les consulter.
 
@@ -102,6 +102,7 @@ if (x == 1) {
     x = 2;
 }
 
+// WhileStatement
 while (true) {
     x = x + 1;
     if (x == 5) {
