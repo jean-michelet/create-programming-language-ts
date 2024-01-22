@@ -2,8 +2,8 @@ export type TokenValue = string | number | boolean | null
 
 export interface Token {
   readonly type: TokenType
-  readonly lexeme: string
   readonly value: TokenValue
+  readonly lexeme: string
   readonly startLine: number
   readonly endLine: number
   readonly startPos: number

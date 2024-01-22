@@ -28,15 +28,13 @@ export default class Scanner implements ScannerInterface {
     this._startLine = this._endLine
     this._startTokenPos = this._endTokenPos
 
+    this._skipComments()
+
     const char = this._advance()
     if (this._isWhitespaceChar(char)) {
       if (char === '\n') this._endLine++
 
       return this.scanToken()
-    }
-
-    if (char === '/' && (this._peek() === '/' || this._peek() === '*')) {
-      return this._skipComments()
     }
 
     if (this._isDigit(char)) {
@@ -207,14 +205,24 @@ export default class Scanner implements ScannerInterface {
     return null
   }
 
-  private _skipComments (): Token {
+  private _skipComments (): void {
+    if (this._peek() !== '/') {
+      return
+    }
+
+    this._advance()
+
     // Single line comment
     if (this._peek() === '/') {
       while (this._peek() !== '\n' && !this._EOF()) {
         this._advance()
       }
 
-      return this.scanToken()
+      return
+    }
+
+    if (this._peek() !== '*') {
+      return
     }
 
     // Multi-line comment
@@ -229,8 +237,6 @@ export default class Scanner implements ScannerInterface {
         this._endLine++
       }
     }
-
-    return this.scanToken()
   }
 
   private _identifier (): Token {
