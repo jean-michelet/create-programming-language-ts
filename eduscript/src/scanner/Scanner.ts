@@ -82,6 +82,10 @@ export default class Scanner implements ScannerInterface {
         return this._createToken(TokenType.LeftCBrace)
       case '}':
         return this._createToken(TokenType.RightCBrace)
+      case '[':
+        return this._createToken(TokenType.LeftBracket)
+      case ']':
+        return this._createToken(TokenType.RightBracket)
 
       // arithmetic operators
       case '+':

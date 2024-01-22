@@ -7,7 +7,7 @@ import { TokenType, printTokenType } from './Token.js'
 const scanner = new Scanner()
 
 function testScanToken (lexeme: string, tokenType: TokenType): void {
-  void test(`should scan a token of type ${printTokenType(tokenType)}`, () => {
+  void test(`should scan a token of type '${printTokenType(tokenType)}'`, () => {
     scanner.init(lexeme)
     const token = scanner.scanToken()
     assert.strictEqual(token.type, tokenType)
@@ -27,6 +27,8 @@ const testFixtures = [
   [')', TokenType.RightParen],
   ['{', TokenType.LeftCBrace],
   ['}', TokenType.RightCBrace],
+  ['[', TokenType.LeftBracket],
+  [']', TokenType.RightBracket],
 
   // arithmetic operators
   ['+', TokenType.Additive],
@@ -87,7 +89,7 @@ void test('should accept identifiers starting with keyword substring, e.i. `lett
   assert.strictEqual(token.lexeme, 'whileVar')
 })
 
-void test(`should scan a token of type ${printTokenType(TokenType.String)}`, () => {
+void test(`should scan a token of type '${printTokenType(TokenType.String)}'`, () => {
   scanner.init('"Hello world"')
   const token = scanner.scanToken()
   assert.strictEqual(token.type, TokenType.String)
