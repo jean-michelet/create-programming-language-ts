@@ -102,6 +102,7 @@ if (x == 1) {
     x = 2;
 }
 
+// WhileStatement
 while (true) {
     x = x + 1;
     if (x == 5) {
