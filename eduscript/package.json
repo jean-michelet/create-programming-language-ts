@@ -1,0 +1,34 @@
+{
+  "name": "eduscript",
+  "version": "1.0.0",
+  "description": "Educational programming language",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "standard": "ts-standard",
+    "test": "glob -c \"node --test-reporter=spec --test\" \"./dist/**/*.spec.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jean-michelet/create-programming-language-ts.git"
+  },
+  "keywords": [
+    "compilation",
+    "parsing"
+  ],
+  "author": "Jean Michelet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jean-michelet/create-programming-language-ts/issues"
+  },
+  "homepage": "https://github.com/jean-michelet/create-programming-language-ts#readme",
+  "dependencies": {
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.3.3"
+  }
+}
