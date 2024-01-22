@@ -78,24 +78,24 @@ export function printTokenType (token: TokenType): string {
     case TokenType.LeftBracket: return '['
     case TokenType.RightBracket: return ']'
 
-      // arithmetic operators
+    // arithmetic operators
     case TokenType.Additive: return '+'
     case TokenType.Multiplicative: return '*'
 
-      // equality operators
+    // equality operators
     case TokenType.Not: return '!'
     case TokenType.Equal: return '=='
     case TokenType.NotEqual: return '!='
 
-      // assignment operators
+    // assignment operators
     case TokenType.Assign: return '='
 
-      // literals
+    // literals
     case TokenType.Number: return 'Number'
     case TokenType.String: return 'String'
     case TokenType.Boolean: return 'Boolean'
 
-      // keywords
+    // keywords
     case TokenType.Let: return 'Let'
     case TokenType.Function: return 'Function'
     case TokenType.If: return 'If'
@@ -105,13 +105,13 @@ export function printTokenType (token: TokenType): string {
     case TokenType.Break: return 'Break'
     case TokenType.Continue: return 'Continue'
 
-      // Types
+    // Types
     case TokenType.Type: return 'Type'
 
-      // Identifier
+    // Identifier
     case TokenType.Identifier: return 'Identifier'
 
-      // Others
+    // Others
     case TokenType.Eof: return 'Eof'
     default: return '' // Handle unknown token types
   }
