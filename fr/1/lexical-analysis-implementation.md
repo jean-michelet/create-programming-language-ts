@@ -47,8 +47,7 @@ function scan(input: string): string[] {
       return '';
     }
 
-    // Essaye toutes les expressions régulières jusqu'à ce qu'il en trouve une qui reconnaît un token
-    // à cet emplacement précis dans le code source
+    // Teste toutes les expressions régulières jusqu'à identifier le token
     for (const regex of regexList) {
       const match = input
         // input.slice(position) coupe la chaîne à partir d'un certain index
@@ -65,7 +64,7 @@ function scan(input: string): string[] {
     }
 
     // Si aucun token n'est trouvé, nous déclenchons une erreur 
-    // pour indiquer que ce token n'est pas valide.
+    // pour indiquer que le token est invalide.
     throw new SyntaxError(`Unexpected token '${input[position]}'`);
   }
 
