@@ -103,7 +103,7 @@ Nous allons devoir scanner principalement 4 types de tokens.
 
 **Les identifiants** : `myVar`, `myFunction`, `myArray`, etc.
 
-Vous allez rapidement constaté que j'utilise différentes techniques Parfois j'itère avec boucle `while`, parfois avec une boucle `for`. Parfois je teste mes conditions avec un `switch`, parfois avec des conditions `if`. Cela permet d'illustrer plusieurs façons de faire, mais *je* pense sincèrement cela n'a pas beaucoup d'importance, du moment que *ça fonctionne*.
+Vous allez rapidement constater que j'utilise différentes stratégies. Parfois, j'itère avec boucle `while`, parfois avec une boucle `for`. Parfois, je teste mes conditions avec un `switch`, parfois avec des conditions `if`. Cela permet de montrer plusieurs façons de faire, mais *je* pense sincèrement cela n'a pas beaucoup d'importance, du moment que *ça fonctionne*.
 
 ### Scanner des symboles
 Scanner des symboles dans un code source est trivial :
