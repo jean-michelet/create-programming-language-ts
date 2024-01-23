@@ -86,7 +86,7 @@ L'analyse lexicale peut aussi être implémentée *from scratch*. Dans ce cours,
 
 Ce qu'il est important de comprendre, c'est que vous devez garder en mémoire la position à laquelle vous vous trouvez pour matcher les tokens. Chaque fois qu'un token est identifié, on *se déplace* de la sorte : `position += token.length`.
 
-## Algorithmes d'analyse
+## Techniques de scannage
 Nous allons devoir scanner principalement 4 types de tokens.
 
 **Les symboles** : `;`, `(`, `[`, `=`, etc.

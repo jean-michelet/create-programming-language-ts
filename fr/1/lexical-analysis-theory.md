@@ -254,6 +254,10 @@ Il faut donc bien comprendre qu'un langage régulier est un langage formel pouva
 
 Nous sommes très loin d'avoir abordé toutes les notions de la théorie des langages, nous en reparlerons un peu lorsque nous nous intéresserons à l'analyse syntaxique. Je pars du principe que beaucoup de lecteurs n'ont pas les bases mathématiques nécessaires ni d'intérêt pour le sujet, mais vous pouvez consulter les ressources présentes dans la section **Aller plus loin**.
 
+---
+
+[Passer au chapitre suivant](https://github.com/jean-michelet/create-programming-language-ts/blob/main/fr/1/lexical-analysis-implementation.md)
+
 ## Aller plus loin
 - Porter, Harry. (2015). Youtube. [Lecture 1/65: Background: What You Probably Know.](https://www.youtube.com/watch?v=TOsMcgIK95k) (Remise à niveau mathématique)
 - Demaille, Akim. (21 novembre 2016). Youtube. [Théorie des Langages.](https://www.youtube.com/watch?v=WbUpN4fHs_k)

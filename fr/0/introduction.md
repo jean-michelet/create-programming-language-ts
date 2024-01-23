@@ -355,3 +355,7 @@ Le middle-end permet de rendre le front-end indépendant du back-end.
 | ![](./0-compilation-flow.png) |
 |:--:|
 | Front-end, Middle-end et Back-end |
+
+---
+
+[Passer au chapitre suivant](https://github.com/jean-michelet/create-programming-language-ts/blob/main/fr/1/lexical-analysis-theory.md)
