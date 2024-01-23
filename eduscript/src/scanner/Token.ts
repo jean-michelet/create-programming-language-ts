@@ -116,5 +116,3 @@ export function printTokenType (token: TokenType): string {
     default: return '' // Handle unknown token types
   }
 }
-
-
