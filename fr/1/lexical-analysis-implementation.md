@@ -26,28 +26,27 @@ const regexList: RegExp[] = [
   /^\blet\b/,
 
   // Identifiants
-  /^[_a-zA-Z][_a-zA-Z0-9]*/,
-];
+  /^[_a-zA-Z][_a-zA-Z0-9]*/
+]
 
-function scan(input: string): string[] {
-  const tokens: string[] = [];
+function scan (input: string): string[] {
+  const tokens: string[] = []
 
   // Nous devons suivre la position dans le code source
-  let pos = 0;
+  let pos = 0
   while (pos < input.length) {
-    const currentToken = scanToken();
-    tokens.push(currentToken);
+    tokens.push(scanToken())
   }
 
-  function scanToken(): string {
+  function scanToken (): string {
     // Ignore les espaces
     while (pos < input.length && /\s/.test(input[pos])) {
-      pos++;
+      pos++
     }
 
     // Fin du fichier
     if (pos === input.length) {
-      return '';
+      return ''
     }
 
     // Teste toutes les expressions régulières jusqu'à identifier le token
@@ -56,22 +55,22 @@ function scan(input: string): string[] {
         // input.slice(pos) coupe la chaîne à partir d'un certain index
         // par exemple, "let x = 1".slice(4) donne "x = 1"
         .slice(pos)
-        // .match(regex) retourne les chaînes identifiées ou null 
-        .match(regex);
+        // .match(regex) retourne les chaînes identifiées ou null
+        .match(regex)
 
       if (match !== null) {
         // La pos est désormais à la fin du token identifié
-        pos += match[0].length;
-        return match[0];
+        pos += match[0].length
+        return match[0]
       }
     }
 
-    // Si aucun token n'est trouvé, nous déclenchons une erreur 
+    // Si aucun token n'est trouvé, nous déclenchons une erreur
     // pour indiquer que le token est invalide.
-    throw new SyntaxError(`Unexpected token '${input[pos]}'`);
+    throw new SyntaxError(`Unexpected token '${input[pos]}'`)
   }
 
-  return tokens;
+  return tokens
 }
 ```
 
