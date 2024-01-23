@@ -355,7 +355,7 @@ export default class Scanner implements ScannerInterface {
 
     return {
       type,
-      lexeme,
+      lexeme: type === TokenType.Eof ? '' : lexeme,
       value,
       startLine: this._startLine,
       endLine: this._endLine,
