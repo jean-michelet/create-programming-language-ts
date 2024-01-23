@@ -1,6 +1,8 @@
 # Créer un langage de programmation - Introduction
 ##### Édition TypeScript
 
+> Ce cours est toujours en cours de rédaction et peut contenir des erreurs.
+
 ## Sommaire
 
 - [Pourquoi apprendre à créer un langage de programmation ?](#pourquoi-apprendre-à-créer-un-langage-de-programmation-)
@@ -9,7 +11,6 @@
 - [Interpréteur d'AST](#interpréteur-dast)
 - [Machines Virtuelles et bytecode](#machines-virtuelles-et-bytecode)
 - [Étapes de compilation](#étapes-de-compilation)
-
 
 ## Pourquoi apprendre à créer un langage de programmation ?
 C'est une question légitime, pourquoi investir du temps dans une tâche de cette complexité ? 

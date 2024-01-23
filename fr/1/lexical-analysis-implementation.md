@@ -2,8 +2,14 @@
 # Créer un langage de programmation - Développer un scanner 2/2
 ##### Édition TypeScript
 
-> Ce chapitre est toujours en cours de rédaction et peut contenir des erreurs.
+> Ce cours est toujours en cours de rédaction et peut contenir des erreurs.
 
+## Sommaire
+- [Utiliser des expressions régulières](#utiliser-des-expressions-régulières)
+- [Scanner *from scratch*](#scanner-from-scratch)
+- [Implémentation](#implémentation)
+
+## Utiliser des expressions régulières
 Nous avons vu au chapitre précédent que nous pouvons utiliser un **automate fini** pour identifier nos différents tokens. Tout automate fini peut être décrit par une expression régulière, il est donc possible d'utiliser un moteur d'expression régulière pour implémenter notre scanner.
 
 Par exemple avec ce type d'algorithme :
@@ -86,7 +92,7 @@ L'analyse lexicale peut aussi être implémentée *from scratch*. Dans ce cours,
 
 Ce qu'il est important de comprendre, c'est que vous devez garder en mémoire la position à laquelle vous vous trouvez pour matcher les tokens. Chaque fois qu'un token est identifié, on *se déplace* de la sorte : `position += token.length`.
 
-## Techniques de scannage
+## Scanner *from scratch*
 Nous allons devoir scanner principalement 4 types de tokens.
 
 **Les symboles** : `;`, `(`, `[`, `=`, etc.
