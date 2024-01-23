@@ -163,9 +163,11 @@ export default class Scanner implements ScannerInterface {
         if (this._followedBy('umber')) {
           return this._createToken(TokenType.Type)
         }
+
         if (this._followedBy('ull')) {
           return this._createToken(TokenType.Type)
         }
+
         break
 
       case 'r':
@@ -291,6 +293,7 @@ export default class Scanner implements ScannerInterface {
     // keywords must not be followed by an alpha char because it might be an identifier or another keyword
     // e.g. `let` keyword vs `letter` identifier
     if (this._isAlpha(this._peekAt(i))) {
+      console.log(this._peekAt(i))
       return false
     }
 
