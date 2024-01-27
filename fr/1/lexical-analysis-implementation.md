@@ -257,11 +257,11 @@ function scanKeyWords (input: string): string[] {
       continue
     }
 
-    if (input[pos] === 'e') {
+    if (input[pos] === 'e' && followedBy('lse')) {
       // Essayez d'inverser l'ordre des conditions et vous obtiendrez une erreur
-      if (followedBy('lse if')) {
+      if (followedBy(' if')) {
         tokens.push('else if')
-      } else if (followedBy('lse')) {
+      } else {
         tokens.push('else')
       }
 
