@@ -87,11 +87,14 @@ console.log(scan('let x = 1;')) // ["let", "x", "=", "1", ";"]
 scan('let x = @;')
 ```
 
-L'analyse lexicale peut aussi être implémentée *from scratch*. Dans ce cours, nous allons créer notre propre implémentation d'automate fini et parcourir le code source par nous-même, mais choisissez la méthode que vous préférez.
+Ce qu'il est important de comprendre, c'est que vous devez garder en mémoire la position à laquelle vous vous trouvez pour matcher les tokens. 
+Chaque fois qu'un token est identifié, on *se déplace* de la sorte : `position += token.length`.
 
-Ce qu'il est important de comprendre, c'est que vous devez garder en mémoire la position à laquelle vous vous trouvez pour matcher les tokens. Chaque fois qu'un token est identifié, on *se déplace* de la sorte : `position += token.length`.
+Dans la plupart des écosystèmes des langages de programmation, il existe des librairies pouvant générer un scanner à partir d'expressions régulières, par exemple, si vous utilisez C/C++, vous pouvez utiliser la librairie [Flex](https://github.com/westes/flex).
 
 ## Scanner *from scratch*
+Un scanner peut aussi être implémenté *from scratch* (Hand-Coded), idéal pour personnaliser le comportement et optimiser les performances. Dans ce cours, nous allons créer notre propre implémentation d'automate fini et parcourir le code source par nous-même, mais choisissez la méthode que vous préférez.
+
 Nous allons devoir scanner principalement 4 types de tokens.
 
 **Les symboles** : `;`, `(`, `[`, `=`, etc.
