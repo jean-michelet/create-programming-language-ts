@@ -97,19 +97,20 @@ function incrementX(): void {
 
 // IfStatement
 if (x == 1) {
-    x = 1;
-} else {
     x = 2;
+} else {
+    x = 1;
 }
 
 // WhileStatement
 while (true) {
     x = x + 1;
-    if (x == 5) {
-        break; // BreakStatement
-    }
     if (x == 3) {
         continue; // ContinueStatement
+    }
+
+    if (x == 5) {
+        break; // BreakStatement
     }
 }
 ```
