@@ -48,6 +48,8 @@ Des ressources additionnelles vous seront communiquées lorsque que je décide d
 Un langage de programmation est composé de 3 constructions principales : les éléments littéraux, les expressions et les instructions (Statements en anglais).
 
 #### Littéraux
+Un littéral est une valeur fixe d'un programme, comme les nombres (42, 3.14), les chaînes de caractères ("Hello"), et les valeurs booléennes (true, false).
+
 EduScript supporte les valeurs littérales suivantes :
 ```ts
 "Hello, world!"; // strings
@@ -57,6 +59,8 @@ null; // null
 ```
 
 #### Expressions
+Une expression est une combinaison d'éléments littéraux, de variables, d'opérateurs et de fonctions qui sont évalués par le programme pour produire une valeur.
+
 EduScript supporte les expressions suivantes :
 ```ts
 // UnaryExpression
@@ -76,6 +80,8 @@ a[0];
 ```
 
 ### Instructions
+Une instruction est une partie du programme qui effectue une action ou influence le flux d'exécution du programme.
+
 EduScript supporte les instructions suivantes :
 ```ts
 // VariableDeclaration
