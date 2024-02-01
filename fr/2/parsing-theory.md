@@ -132,11 +132,11 @@ Considérons une grammaire **G** pour le langage **L = { aⁿb | n ≥ 0 }** :
 
 #### 1. Ensemble de symboles non-terminaux **N** : { **S**, **A** }.
 
-Les symboles non-terminaux peuvent être considérés comme des variables pouvant être remplacés par une ou plusieurs règles de productions.
+Les symboles non-terminaux peuvent être considérés comme des variables pouvant être substituées par une ou plusieurs règles de productions.
 
 #### 2. Ensemble de symboles terminaux **Σ** : { `a`, `b` }
 
-Les symboles terminaux sont les unités indivisibles d'une grammaire. Ici, les caractères `a` et `b` sont les symboles terminaux.
+Les symboles terminaux sont les unités indivisibles d'une grammaire.
 
 #### 3. Règles de production **P** :
 - **S** → **A**b (une production de **A** suivie d'un `b`)
@@ -145,6 +145,8 @@ Les symboles terminaux sont les unités indivisibles d'une grammaire. Ici, les c
 
 #### 4. Symbole de départ **S**
 Le symbole de départ est le symbole non-terminal par lequel on commence l'analyse.
+
+### Exemples
 
 #### Analyse de l'entrée `b`
 
@@ -159,9 +161,9 @@ Conclusion : `b` est une entrée valide pour **G**.
 - Nous partons de _**S** → **A**b_.
 - Nous substituons **A** par a**A**, conformément à la règle _**A** → a**A**_.
 - Nous obtenons _**S** → a**A**b_.
-- Répétons la même substitution pour **A**
+- Nous répétons la même substitution pour **A**
 - Nous obtenons _**S** → aa**A**b_.
-- Enfin, substituons **A** par *ε*, conformément à la règle _**A** → ε_.
+- Nous substituons **A** par *ε*, conformément à la règle _**A** → ε_.
 - Nous obtenons _**S** → aab_.
 
 Conclusion : `aab` est une entrée valide pour **G**.
@@ -204,10 +206,10 @@ Ces grammaires génèrent les langages réguliers. Les règles de production son
 ### Exemple de grammaire non-contextuelle
 Pour illustrer une grammaire non-contextuelle, considérons une série d'additions avec et sans parenthèses.
 
-Le tuple pour cette grammaire serait :
+Le quadruplé pour cette grammaire serait :
 - **N** : { **E** } (signifiant expression)
-- **Σ** : { `number`, `+`, `(`, `)`}
-  - Ici, `number` représente n'importe quel nombre entier.
+- **Σ** : { `number`, `+`, `(`, `)` }
+  - `number` représente n'importe quel nombre entier.
 - **P** :
   - **E** → **E** + **E**
   - **E** → ( **E** )
@@ -250,11 +252,13 @@ La notation Extended Backus-Naur Form ([EBNF](https://en.wikipedia.org/wiki/Exte
 Considérons une grammaire, nommée **GE2**, pour une série d'additions avec et sans parenthèses, où `number` représente tout nombre entier. 
 
 Une représentation EBNF possible est :
-```
-expression ::= expression + expression
-             | ( expression )
+```ebnf
+expression ::= expression '+' expression
+             | '(' expression ')'
              | number
 ```
+
+> Le symbole `|` signifie *union* et peut être traduit par *ou*. 
 
 Dans cet exemple, `number` est un symbole terminal qui représente n'importe quel nombre entier.
 
@@ -281,7 +285,7 @@ expression ::= expression '+' expression
              | number;
 ```
 
-La chaîne `3 + 4 * 5` peut être analysée de deux façons différentes :
+La chaîne `3 + 4 * 5` peut être représentée de deux façons différentes :
 `(3 + 4) * 5` ou `3 + (4 * 5)`
 
 Ces deux interprétations ont des significations différentes, l'une ajoutant 3 et 4 avant de multiplier par 5, l'autre multipliant 4 et 5 avant d'ajouter 3. Nous y reviendrons plus en détails lors de l'implémentation du parser de EduScript, mais voici un exemple de grammaire qui résout le problème :
