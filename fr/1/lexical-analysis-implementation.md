@@ -87,11 +87,14 @@ console.log(scan('let x = 1;')) // ["let", "x", "=", "1", ";"]
 scan('let x = @;')
 ```
 
-L'analyse lexicale peut aussi être implémentée *from scratch*. Dans ce cours, nous allons créer notre propre implémentation d'automate fini et parcourir le code source par nous-même, mais choisissez la méthode que vous préférez.
+Ce qu'il est important de comprendre, c'est que vous devez garder en mémoire la position à laquelle vous vous trouvez pour matcher les tokens. 
+Chaque fois qu'un token est identifié, on *se déplace* de la sorte : `position += token.length`.
 
-Ce qu'il est important de comprendre, c'est que vous devez garder en mémoire la position à laquelle vous vous trouvez pour matcher les tokens. Chaque fois qu'un token est identifié, on *se déplace* de la sorte : `position += token.length`.
+Dans la plupart des écosystèmes des langages de programmation, il existe des librairies pouvant générer un scanner à partir d'expressions régulières, par exemple, si vous utilisez C/C++, vous pouvez utiliser la librairie [Flex](https://github.com/westes/flex).
 
 ## Scanner *from scratch*
+Un scanner peut aussi être implémenté *from scratch* (Hand-Coded), idéal pour personnaliser le comportement et optimiser les performances. Dans ce cours, nous allons créer notre propre implémentation d'automate fini et parcourir le code source par nous-même, mais choisissez la méthode que vous préférez.
+
 Nous allons devoir scanner principalement 4 types de tokens.
 
 **Les symboles** : `;`, `(`, `[`, `=`, etc.
@@ -102,7 +105,7 @@ Nous allons devoir scanner principalement 4 types de tokens.
 
 **Les identifiants** : `myVar`, `myFunction`, `myArray`, etc.
 
-Vous allez rapidement constater que j'utilise différentes stratégies. Parfois, j'itère avec boucle `while`, parfois avec une boucle `for`. Parfois, je teste mes conditions avec un `switch`, parfois avec des conditions `if`. Cela permet de montrer plusieurs façons de faire, mais *je* pense sincèrement cela n'a pas beaucoup d'importance, du moment que *ça fonctionne*.
+Vous allez rapidement constater que j'utilise différentes stratégies. Parfois, j'itère avec une boucle `while`, parfois avec une boucle `for`. Parfois, je teste mes conditions avec un `switch`, parfois avec des conditions `if`. Cela permet de montrer plusieurs façons de faire, mais *je* pense sincèrement cela n'a pas beaucoup d'importance, du moment que *ça fonctionne*.
 
 ### Scanner des symboles
 Scanner des symboles dans un code source est trivial :
@@ -257,11 +260,11 @@ function scanKeyWords (input: string): string[] {
       continue
     }
 
-    if (input[pos] === 'e') {
+    if (input[pos] === 'e' && followedBy('lse')) {
       // Essayez d'inverser l'ordre des conditions et vous obtiendrez une erreur
-      if (followedBy('lse if')) {
+      if (followedBy(' if')) {
         tokens.push('else if')
-      } else if (followedBy('lse')) {
+      } else {
         tokens.push('else')
       }
 
