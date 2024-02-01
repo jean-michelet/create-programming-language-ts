@@ -84,7 +84,7 @@ Dans le module consacré à l'analyse lexicale, nous avons introduit la notion d
 
 Le problème est que ces notions ne permettent pas d'analyser certaines structures, comme l'équilibrage des parenthèses `(()())` ou des accolades `{{}{}}`, qui nécessite de compter le nombre d'ouvertures et de fermetures. Ceci est dû au fait qu'un automate fini a, par définition, un nombre fini d'états et ne peut donc pas stocker un nombre arbitraire d'informations.
 
-Pour résoudre cette problématique, nous avons recours à des concepts plus avancés tels que les [**automates à pile**](https://en.wikipedia.org/wiki/Pushdown_automaton) ou **pushdown automaton** en anglais, ainsi que les grammaires non-contextuelles. L'automate à pile se distingue par sa capacité à stocker une quantité indéterminée d'informations grâce à sa pile, ce qui lui permet, par exemple, de suivre le nombre de parenthèses ouvertes et de garantir leur équilibrage.
+Pour résoudre cette problématique, nous avons recours à des concepts plus avancés tels que les [**automates à pile**](https://en.wikipedia.org/wiki/Pushdown_automaton) ou **pushdown automata** (*automaton* au singulier) en anglais, ainsi que les grammaires non-contextuelles. L'automate à pile se distingue par sa capacité à stocker une quantité indéterminée d'informations grâce à sa pile, ce qui lui permet, par exemple, de suivre le nombre de parenthèses ouvertes et de garantir leur équilibrage.
 
 Exemple d'automate à pile (stack) permettant de reconnaître des parenthèses équilibrées :
 
