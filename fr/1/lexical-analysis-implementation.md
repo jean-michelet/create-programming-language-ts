@@ -394,7 +394,7 @@ function scanStrings (input: string): string[] {
 
   function scanString (): string {
     let lexeme = input[pos++]
-    while (input[pos] !== '' && input[pos] !== '"') {
+    while (input[pos] && input[pos] !== '"') {
       lexeme += input[pos++]
     }
 
