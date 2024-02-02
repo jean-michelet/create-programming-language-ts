@@ -219,7 +219,7 @@ Le quadruplé pour cette grammaire serait :
 Nommons cette grammaire **GE**.
 
 #### Analyse de l'entrée `7`
-- La règle _**E** → number_ nous indique que `7` est une entrée valide pour **GE**.
+La règle _**E** → number_ nous indique que `7` est une entrée valide pour **GE**.
 
 #### Analyse de l'entrée `3 + 5`
 - Nous partons de _**E** → **E** + **E**_.
