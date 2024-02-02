@@ -68,9 +68,9 @@ Autre situation, vous êtes journaliste et vous apprêtez à traduire en direct 
 ### Interpréteur d'AST
 Un arbre de la syntaxe abstraite ou AST (Abstract Syntax Tree) en anglais, est une représentation arborescente de la structure syntaxique d'un code source. Chaque nœud représente une construction dans le langage (opération arithmétique, déclaration de variable, boucle, condition, etc.).
 
-Prenons l'exemple d'une déclaration de variable :
+Prenons l'exemple d'une assignation :
 ```javascript
-var x = a + b * c
+x = a + b * c
 ```
 
 Voici une représentation possible sous forme d'AST :
@@ -78,6 +78,8 @@ Voici une représentation possible sous forme d'AST :
 | ![](./0-ast-example.png) |
 |:--:|
 | AST simplifié |
+
+> 
 
 Un interpréteur d'AST est un programme qui va parcourir l'AST et exécuter chaque instruction qu'il contient. Un de ses avantages majeurs est que le code source ne nécessite aucune compilation, ce qui lui confère une excellente portabilité. De plus, un AST peut contenir beaucoup d'informations, permettant une analyse et une manipulation très fine du code source. Mais sa structure s'accompagne également d'inconvénients, analyser et exécuter chaque nœud de l'AST en temps réel n'est pas performant en termes de rapidité d'exécution et de consommation de mémoire.
 
