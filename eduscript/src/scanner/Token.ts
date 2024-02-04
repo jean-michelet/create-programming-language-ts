@@ -79,8 +79,8 @@ export function printTokenType (token: TokenType): string {
     case TokenType.RightBracket: return ']'
 
     // arithmetic operators
-    case TokenType.Additive: return '+'
-    case TokenType.Multiplicative: return '*'
+    case TokenType.Additive: return '(+|-)'
+    case TokenType.Multiplicative: return '(*|/)'
 
     // equality operators
     case TokenType.Not: return '!'

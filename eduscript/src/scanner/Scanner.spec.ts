@@ -32,7 +32,9 @@ const testFixtures = [
 
   // arithmetic operators
   ['+', TokenType.Additive],
+  ['-', TokenType.Additive],
   ['*', TokenType.Multiplicative],
+  ['/', TokenType.Multiplicative],
 
   // equality operators
   ['!', TokenType.Not],

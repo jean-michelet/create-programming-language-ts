@@ -212,23 +212,21 @@ export default class Scanner implements ScannerInterface {
       return
     }
 
-    this._advance()
-
     // Single line comment
-    if (this._peek() === '/') {
-      while (this._peek() !== '\n' && !this._EOF()) {
+    if (this._peekAt(1) === '/') {
+      do {
         this._advance()
-      }
+      } while (this._peek() !== '\n' && !this._EOF())
 
       return
     }
 
-    if (this._peek() !== '*') {
+    if (this._peekAt(1) !== '*') {
       return
     }
 
     // Multi-line comment
-    while (!this._EOF()) {
+    do {
       if (this._peek() === '*' && this._peekAt(1) === '/') {
         this._advance()
         this._advance()
@@ -238,7 +236,7 @@ export default class Scanner implements ScannerInterface {
       if (this._advance() === '\n') {
         this._endLine++
       }
-    }
+    } while (!this._EOF())
   }
 
   private _identifier (): Token {
