@@ -139,7 +139,7 @@ Si vous possédez une solide connaissance dans ce domaine, une relecture est for
 **Optimisation du code :**
 Vous pouvez proposer d'améliorer la clarté et/ou la pertinence des exemples d'implémentation.
 Veillez toutefois à éviter une orientation trop spécifique à JS/TS.
-Dans le cas où vous souhaiteriez vous adresser directement aux développeurs JS/TS spécifiquement, proposez plutôt une alternative sous forme de note :
+Dans le cas où vous souhaiteriez vous adresser spécifiquement aux développeurs JS/TS, proposez plutôt une alternative sous forme de note :
 > Note à propos de cet exemple...
 
 **Récompense :** votre nom et un lien vers votre profil GitHub (ou tout autre réseau social notable de votre choix) seront mis en avant dans la section des contributeurs techniques.
