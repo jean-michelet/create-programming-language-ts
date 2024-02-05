@@ -146,7 +146,7 @@ Dans le cas où vous souhaiteriez vous adresser directement aux développeurs JS
 
 
 ### Contributions non-techniques
-**Correction linguistique :**
+**Correction :**
 Si vous avez un œil pour repérer les fautes de Français, votre aide sera grandement appréciée.
 
 **Traduction :**
