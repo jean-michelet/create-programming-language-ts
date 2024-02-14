@@ -92,7 +92,7 @@ let x: number = 1;
 
 // FunctionDeclaration
 function add(a: number, b: number): number {
-    return a + b; // Return Statement (Instruction de Retour)
+    return a + b; // ReturnStatement
 }
 
 {
