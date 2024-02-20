@@ -89,7 +89,7 @@ Vous vous en doutez probablement, pour créer un langage de programmation, nous 
 ### Alphabets et mots
 Un alphabet est un ensemble **fini** et **non-vide** de symboles. Ces symboles peuvent être assemblés pour former des **mots** (ou **strings** en anglais). 
 
-- **fini**, car contient une infinité de symboles.
+- **fini**, car contient un nombre fini de symboles.
 - **non-vide**, car contient au moins un symbole.
 
 Par convention, un alphabet est souvent désigné par la lettre **Σ** (se prononce Sigma).
