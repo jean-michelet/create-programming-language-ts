@@ -172,7 +172,7 @@ Un **automate fini**, également connu sous le nom de machine à états fini, es
 
 ### Structure d'un automate fini
 * **États** : ils représentent les positions ou situations possibles de l'automate.
-* **Transitions** : les mouvements que l'automate peut effectuer d'un état à un autre pour un symbole.
+* **Transitions** : les déplacements d'un état à un autre pour un symbole donné.
 * **État de départ** : l'état initial où l'automate débute son parcours.
 * **États d'acceptation** : atteindre ces états signifie que l'automate a reconnu le motif recherché.
 
