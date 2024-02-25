@@ -49,12 +49,14 @@ function scan (input: string): string[] {
       return ''
     }
 
-    // Teste toutes les expressions régulières jusqu'à identifier le token
-    for (const regex of regexList) {
-      const match = input
+    const str = input
         // input.slice(pos) coupe la chaîne à partir d'un certain index
         // par exemple, "let x = 1".slice(4) donne "x = 1"
         .slice(pos)
+
+    // Teste toutes les expressions régulières jusqu'à identifier le token
+    for (const regex of regexList) {
+      const match = str
         // .match(regex) retourne les chaînes identifiées ou null
         .match(regex)
 
