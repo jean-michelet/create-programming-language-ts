@@ -249,7 +249,7 @@ Considérons une grammaire, nommée **GE2**, pour une série d'additions avec et
 
 Une représentation EBNF possible est :
 ```ebnf
-expression ::= expression '+' expression
+expression = expression '+' expression
              | '(' expression ')'
              | number
 ```
@@ -276,7 +276,7 @@ Une grammaire est considérée ambiguë lorsqu'une même chaîne de caractères 
 #### Exemple d'Ambiguïté
 Considérons la grammaire simple suivante pour les expressions arithmétiques :
 ```ebnf
-expression ::= expression '+' expression
+expression = expression '+' expression
              | expression '*' expression
              | number;
 ```
@@ -286,9 +286,9 @@ La chaîne `3 + 4 * 5` peut être représentée de deux façons différentes :
 
 Ces deux interprétations ont des significations différentes, l'une ajoutant 3 et 4 avant de multiplier par 5, l'autre multipliant 4 et 5 avant d'ajouter 3. Nous y reviendrons plus en détails lors de l'implémentation du parser de EduScript, mais voici un exemple de grammaire qui résout le problème :
 ```ebnf
-expression ::= term { ('+' | '-') term }
-term       ::= factor { ('*' | '/') factor }
-factor     ::= 'number' | '(' expression ')'
+expression = term { ('+' | '-') term }
+term       = factor { ('*' | '/') factor }
+factor     = 'number' | '(' expression ')'
 ```
 
 L'utilisation des accolades `{}` avec les opérateurs `+` et `*` indique que ces opérations peuvent être appliquées zéro ou plusieurs fois.
