@@ -400,6 +400,10 @@ function scanStrings (input: string): string[] {
       lexeme += input[pos++]
     }
 
+    if (input[pos] !== '"') {
+      throw new SyntaxError("Unexpected end of file")
+    }
+
     return lexeme + input[pos] // + closing `"`
   }
 
