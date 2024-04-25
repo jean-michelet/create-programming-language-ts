@@ -13,8 +13,7 @@
 ---
 ### Tout le monde peut contribuer
 1. Mettez une étoile pour montrer votre soutien !
-3. Vous pouvez [sponsoriser le projet](https://github.com/sponsors/jean-michelet?frequency=one-time&sponsor=jean-michelet).
-4. Si vous souhaitez contribuer techniquement ou corriger/traduire, lisez la section [**Contribuer**](#contribuer).
+2. Si vous souhaitez contribuer techniquement ou corriger/traduire, lisez la section [**Contribuer**](#contribuer).
 
 ## Pourquoi apprendre à créer un langage de programmation ?
 C'est une question légitime, pourquoi investir du temps dans une tâche de cette complexité ? 
@@ -126,31 +125,10 @@ while (true) {
 
 ## Contribuer
 
-### Sponsoring
-Si vous souhaitez contribuer financièrement au projet, vous pouvez consulter ma page [sponsoring](https://github.com/sponsors/jean-michelet?frequency=one-time&sponsor=jean-michelet).
-
-**Récompense :** votre nom et un lien vers votre profil GitHub (ou tout autre réseau social notable de votre choix) seront mis en avant dans la section des contributeurs ou top contributeurs.
-
-
-### Contributions techniques
 **Expertise en informatique théorique :**
 Si vous possédez une solide connaissance dans ce domaine, une relecture est fortement appréciée.
 
 **Optimisation du code :**
 Vous pouvez proposer d'améliorer la clarté et/ou la pertinence des exemples d'implémentation.
 Veillez toutefois à éviter une orientation trop spécifique à JS/TS.
-Dans le cas où vous souhaiteriez vous adresser spécifiquement aux développeurs JS/TS, proposez plutôt une alternative sous forme de note :
-> Note à propos de cet exemple...
-
-**Récompense :** votre nom et un lien vers votre profil GitHub (ou tout autre réseau social notable de votre choix) seront mis en avant dans la section des contributeurs techniques.
-
-
-### Contributions non-techniques
-**Correction :**
-Si vous avez un œil pour repérer les fautes de Français, votre aide sera grandement appréciée.
-
-**Traduction :**
-Contribuez à rendre le cours accessible à un public plus large en le traduisant vers l'anglais.
-Il suffit de créer un dossier `en` et de reprendre la structure présente dans le dossier `fr`
-
-**Récompense :** votre nom et un lien vers votre profil GitHub (ou tout autre réseau social notable de votre choix) seront mis en avant dans la section des contributeurs.
+Dans le cas où vous souhaiteriez vous adresser spécifiquement aux développeurs JS/TS, proposez plutôt une alternative sous forme de note.
